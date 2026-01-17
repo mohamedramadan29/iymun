@@ -525,11 +525,119 @@ body {
 }
 
 
-.about_who_are{
+.about_who_are {}
 
+.about_who_are .section-title {
+    font-size: 2rem;
+    text-align: -webkit-auto;
 }
 
-.about_who_are .section-title{
-        font-size: 2rem;
-    text-align: -webkit-auto;
+
+/* ################### Start Login Page  ####################### */
+
+.login_page{
+     background: linear-gradient(135deg, #0a1128 0%, #001F3F 50%, #0A72B5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+}
+.login-container {
+
+    margin: auto;
+    max-width: 500px;
+    width: 100%;
+    padding: 0 1rem;
+    margin-top: 80px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+}
+
+.logo-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #4A90E2, #0A72B5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 3rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
+}
+
+.form-control-custom {
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-control-custom:focus {
+    border-color: #4A90E2;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #4A90E2, #0A72B5);
+    color: white;
+    padding: 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.btn-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
+    color: white;
+}
+
+.divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.divider::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.link-custom {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.link-custom:hover {
+    color: #0A72B5;
+    text-decoration: underline;
 }

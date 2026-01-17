@@ -12,19 +12,42 @@ class FrontController extends Controller
         return view('front.index');
     }
 
-    public function about(){
+    public function about()
+    {
         return view('front.about');
     }
 
-    public function committees(){
+    public function committees()
+    {
         return view('front.committees');
     }
 
-    public function whyUs(){
+    public function whyUs()
+    {
         return view('front.why-us');
     }
 
-    public function pricing(){
+    public function pricing()
+    {
         return view('front.pricing');
+    }
+
+    public function venue()
+    {
+        return view('front.venue');
+    }
+
+    public function partners()
+    {
+        return view('front.partners');
+    }
+
+    public function faq()
+    {
+        return view('front.faq');
+    }
+
+    public function contact(){
+        return view('front.contact');
     }
 }

@@ -1,7 +1,7 @@
 
 
 <!-- ==================== CALL TO ACTION ==================== -->
-<section class="section section-light">
+<section class="section section-light call_to_action">
     <div class="container">
         <div class="text-center" data-aos="zoom-in">
             <div class="p-5 rounded-5" style="background: var(--gradient-dark); box-shadow: var(--shadow-xl);">
