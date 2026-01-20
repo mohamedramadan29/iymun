@@ -420,10 +420,14 @@
                         <li class="excluded">Personal expenses</li>
                     </ul>
 
-                    <a href="registration.html" class="btn-select-package mt-4">
-                        Select Package
-                        <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
+                    <form action="{{ route('user.payment') }}">
+                        <input type="hidden" name="package" value="1">
+                        <button type="submit" class="btn-select-package mt-4">
+                            Select Package
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </form>
+
                 </div>
             </div>
 
@@ -572,7 +576,8 @@
                 <div class="card-custom text-center h-100">
                     <div style="font-size: 4rem; margin-bottom: 1rem;"> 🏨 </div>
                     <h4 class="card-title">Accommodation</h4>
-                    <p class="card-text"> Delegates are responsible for arranging their own accommodation. We can provide recommendations for hotels near the conference venue. </p>
+                    <p class="card-text"> Delegates are responsible for arranging their own accommodation. We can
+                        provide recommendations for hotels near the conference venue. </p>
                 </div>
             </div>
 
@@ -580,7 +585,8 @@
                 <div class="card-custom text-center h-100">
                     <div style="font-size: 4rem; margin-bottom: 1rem;"> ✈️ </div>
                     <h4 class="card-title"> Travel & Transportation. </h4>
-                    <p class="card-text"> All travel costs including flights, local transportation, and airport transfers are the delegate's responsibility. </p>
+                    <p class="card-text"> All travel costs including flights, local transportation, and airport
+                        transfers are the delegate's responsibility. </p>
                 </div>
             </div>
 
@@ -588,7 +594,8 @@
                 <div class="card-custom text-center h-100">
                     <div style="font-size: 4rem; margin-bottom: 1rem;"> 📋 </div>
                     <h4 class="card-title"> Visa Support </h4>
-                    <p class="card-text"> We provide invitation letters for visa applications, but visa fees and application processes are the delegate's responsibility. </p>
+                    <p class="card-text"> We provide invitation letters for visa applications, but visa fees and
+                        application processes are the delegate's responsibility. </p>
                 </div>
             </div>
 
@@ -596,7 +603,8 @@
                 <div class="card-custom text-center h-100">
                     <div style="font-size: 4rem; margin-bottom: 1rem;"> 🍽️ </div>
                     <h4 class="card-title"> Meals </h4>
-                    <p class="card-text"> Lunch during conference days is included. Breakfast, dinner, and meals outside conference hours are not included. </p>
+                    <p class="card-text"> Lunch during conference days is included. Breakfast, dinner, and meals outside
+                        conference hours are not included. </p>
                 </div>
             </div>
 
@@ -604,7 +612,8 @@
                 <div class="card-custom text-center h-100">
                     <div style="font-size: 4rem; margin-bottom: 1rem;"> 💳 </div>
                     <h4 class="card-title"> Payment </h4>
-                    <p class="card-text"> Full payment is required to confirm registration. We accept bank transfers and major credit cards. See Payment page for details. </p>
+                    <p class="card-text"> Full payment is required to confirm registration. We accept bank transfers and
+                        major credit cards. See Payment page for details. </p>
                 </div>
             </div>
 
@@ -612,7 +621,8 @@
                 <div class="card-custom text-center h-100">
                     <div style="font-size: 4rem; margin-bottom: 1rem;"> 🔄 </div>
                     <h4 class="card-title"> Refund Policy </h4>
-                    <p class="card-text"> All fees paid for IYMUN New York 2026 registration are non-refundable. This includes all registration packages. See Terms & Conditions for full policy. </p>
+                    <p class="card-text"> All fees paid for IYMUN New York 2026 registration are non-refundable. This
+                        includes all registration packages. See Terms & Conditions for full policy. </p>
                 </div>
             </div>
         </div>

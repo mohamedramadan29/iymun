@@ -5,13 +5,13 @@
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> ادارة المستخدمين </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> ادارة الطلبات والمستخدمين </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
                             </li>
-                            <li class="breadcrumb-item active"> ادارة المستخدمين
+                            <li class="breadcrumb-item active"> ادارة الطلبات والمستخدمين
                             </li>
                         </ol>
                     </div>
@@ -38,9 +38,12 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th> الاسم  </th>
-                                                <th> البريد الالكتروني  </th>
-                                                <th>  تاريخ التسجيل  </th>
+                                                <th> الاسم </th>
+                                                <th> البريد الالكتروني </th>
+                                                <th> تاريخ الميلاد </th>
+                                                <th> الجنس </th>
+                                                <th> الجنسية </th>
+                                                <th> تاريخ التسجيل </th>
                                                 <th> العمليات </th>
                                             </tr>
                                         </thead>
@@ -50,18 +53,21 @@
                                                 <th scope="row">{{ $loop->iteration }}</th>
                                                 <td> {{ $user->name }} </td>
                                                 <td> {{ $user->email }} </td>
+                                                <td> {{ $user->birthdate }} </td>
+                                                <td> {{ $user->gender }} </td>
+                                                <td> {{ $user->nationality }} </td>
                                                 <td> {{ $user->created_at->format('Y/m/d - h:i a') }} </td>
 
                                                 <td>
-                                                    {{-- <a href="{{ route('dashboard.images.difference.edit', $diff->id) }}"
+                                                    <a href="{{ route('dashboard.user.details', $user->id) }}"
                                                         class="btn btn-info btn-sm">
-                                                        تعديل <i class="la la-edit"></i>
+                                                        <i class="la la-eye"></i>
                                                     </a>
-                                                    <a href="{{ route('dashboard.images.difference.delete', $diff->id) }}"
+                                                    <a href="{{ route('dashboard.user.destroy', $user->id) }}"
                                                         class="btn btn-danger btn-sm"
                                                         onclick="return(confirm('هل انت متاكد من الحذف '))">
-                                                        حذف <i class="la la-trash"></i>
-                                                    </a> --}}
+                                                        <i class="la la-trash"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
 

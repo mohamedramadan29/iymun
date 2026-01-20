@@ -33,8 +33,8 @@
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style-rtl.css">
    @yield('css')
-    @toastifyCss
     <!-- END Custom CSS-->
+     @toastifyCss
 </head>
 <body class="vertical-layout vertical-menu 2-columns menu-expanded fixed-navbar"
 data-open="click" data-menu="vertical-menu" data-col="2-columns">

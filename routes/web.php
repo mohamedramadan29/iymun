@@ -6,6 +6,7 @@ use App\Http\Controllers\front\RegisterController;
 use App\Http\Controllers\front\auth\UserController;
 use App\Http\Controllers\dashboard\auth\AuthController;
 use App\Http\Controllers\front\auth\ForgetPasswordController;
+use App\Http\Controllers\front\auth\PaymentController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -49,5 +50,13 @@ Route::controller(ForgetPasswordController::class)->group(function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::controller(UserController::class)->group(function () {
         Route::get('user/dashboard', 'dashboard')->name('user.dashboard');
+    });
+
+    ################# Start Payment #####################
+
+    Route::controller(PaymentController::class)->group(function () {
+        Route::get('payment', 'payment')->name('user.payment');
+        Route::get('payment/success', 'paymentSuccess')->name('user.payment.success');
+        Route::get('payment/cancel', 'paymentCancel')->name('user.payment.cancel');
     });
 });

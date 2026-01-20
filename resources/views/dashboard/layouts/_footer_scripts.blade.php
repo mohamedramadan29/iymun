@@ -18,4 +18,4 @@
   <script src="{{ asset('assets/dashboard/') }}/js/scripts/pages/dashboard-ecommerce.js" type="text/javascript"></script>
   @yield('js')
   <!-- END PAGE LEVEL JS-->
-  @toastifyJs
+    @toastifyJs

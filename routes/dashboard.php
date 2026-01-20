@@ -101,6 +101,9 @@ Route::group([
         ################################# Start Users Controller #################
         Route::controller(UsersController::class)->group(function () {
             Route::get('users', 'index')->name('users.index');
+            Route::get('user/details/{id}','details')->name('user.details');
+            Route::post('user/destroy/{id}','destroy')->name('user.destroy');
+            Route::post('user/change_status/{id}','changeStatus')->name('user.change_status');
         });
     });
 });

@@ -8,19 +8,19 @@
             </li>
              <li class="nav-item {{ Route::is('dashboard.users.*') ? 'active' : '' }}"><a href="#"><i
                         class="la la-file-text"></i><span class="menu-title" data-i18n="nav.users.main">
-                     ادارة المستخدمين
+                     ادارة الطلبات
                     </span></a>
                 <ul class="menu-content">
                     <li class="{{ Route::is('dashboard.users.index') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.users.index') }}"
-                            data-i18n="nav.users.user_profile">  ادارة المستخدمين
+                            data-i18n="nav.users.user_profile">  الطلبات والمستخدمين
                         </a>
                     </li>
 
 
                 </ul>
             </li>
-             
+
             @can('roles')
             <li class="nav-item {{ Route::is('dashboard.roles.*') ? 'active' : '' }}"><a href="#"><i
                         class="la la-television"></i><span class="menu-title" data-i18n="nav.role.main"> الصلاحيات

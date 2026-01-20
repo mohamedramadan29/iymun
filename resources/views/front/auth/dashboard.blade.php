@@ -324,9 +324,10 @@
                     </h3>
 
                     @if($user->application_status_from_admin == 'pending')
-                    <span class="status-badge status-pending" id="statusBadge"> ✓ Pending </span>
+                    <span class="status-badge status-pending" id="statusBadge"> ✓ Pending And Under Review </span>
                     @elseif($user->application_status_from_admin == 'approved')
-                    <span class="status-badge status-approved" id="statusBadge"> ✓ Approved </span>
+                    <span class="status-badge status-approved" id="statusBadge"> ✓ Application reviewed and approved
+                    </span>
                     @elseif($user->application_status_from_admin == 'rejected')
 
                     <span class="status-badge status-payment-pending" id="statusBadge"> ✘ Rejected </span>
@@ -344,7 +345,9 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item completed">
+                    <div
+                        class="timeline-item {{ $user->application_status_from_admin == 'pending' ? 'active' : 'completed' }}">
+                        <!-- completed -->
                         <div class="timeline-dot"></div>
                         <div>
                             <h5 class="fw-bold mb-1">Admin Review</h5>
@@ -352,19 +355,13 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item active">
-                        <div class="timeline-dot"></div>
-                        <div>
-                            <h5 class="fw-bold mb-1">Upload Documents</h5>
-                            <p class="text-muted mb-0">Upload required documents to proceed</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
+                    <div
+                        class="timeline-item {{ $user->payment_status == 'paid' ? 'completed' : 'active'  }}">
                         <div class="timeline-dot"></div>
                         <div>
                             <h5 class="fw-bold mb-1">Payment</h5>
                             <p class="text-muted mb-0">Complete payment to secure your spot</p>
+                            <a class="btn btn-danger btn-sm" href="{{ route('front.pricing') }}"> Payment <i class="fas fa-credit-card"></i> </a>
                         </div>
                     </div>
 
