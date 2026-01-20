@@ -50,4 +50,15 @@ class UsersController extends Controller
 
         return $this->success_message('تم تغير حالة المستخدم بنجاح');
     }
+
+    public function completeApplication($id)
+    {
+        $user = User::where('id', $id)->first();
+        if (!$user) {
+            abort(404);
+        }
+        $user->complete_application = 1;
+        $user->save();
+        return $this->success_message(' تم اكتمال الطلب بنجاح  ');
+    }
 }

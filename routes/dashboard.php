@@ -104,6 +104,7 @@ Route::group([
             Route::get('user/details/{id}','details')->name('user.details');
             Route::post('user/destroy/{id}','destroy')->name('user.destroy');
             Route::post('user/change_status/{id}','changeStatus')->name('user.change_status');
+            Route::get('user/complete_application/{id}','completeApplication')->name('user.complete_application');
         });
     });
 });

@@ -29,10 +29,16 @@
                     <div class="card">
                         <div class="card-header d-flex align-items-center justify-content-between">
                             <h4 class="card-title"> تفاصيل الطلب </h4>
-
+                            @if($user->complete_application == 0)
+                            <a onclick="return(confirm('هل انت متاكد من تاكيد حميع الخطوات والطلب'))"
+                                href="{{ route('dashboard.user.complete_application',$user->id) }}"
+                                class="btn btn-danger btn-sm"> تاكيد الطلب بشكل نهائي <i class="la la-check"></i> </a>
+                            @else
+                            <span class="badge badge-success"> تم اكمال الطلب بنجاح </span>
+                            @endif
                             <button style="margin-right: 3px" type="button" class="btn btn-primary btn-sm"
                                 data-toggle="modal" data-target="#edit_user{{ $user->id }}">
-                                <i class="la la-edit"></i>  تعديل حالة الطلب
+                                <i class="la la-edit"></i> تعديل حالة الطلب
                             </button>
                             @include('dashboard.users._update_status')
                         </div>

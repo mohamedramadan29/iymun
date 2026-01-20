@@ -58,6 +58,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('application_status_from_admin')->default('pending');
             $table->string('payment_status')->default('pending');
+            $table->tinyInteger('complete_application')->default(0);
             $table->string('password');
             $table->tinyInteger('email_status')->default(0);
             $table->rememberToken();

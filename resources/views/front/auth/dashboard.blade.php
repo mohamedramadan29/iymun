@@ -355,17 +355,17 @@
                         </div>
                     </div>
 
-                    <div
-                        class="timeline-item {{ $user->payment_status == 'paid' ? 'completed' : 'active'  }}">
+                    <div class="timeline-item {{ $user->payment_status == 'paid' ? 'completed' : 'active'  }}">
                         <div class="timeline-dot"></div>
                         <div>
                             <h5 class="fw-bold mb-1">Payment</h5>
                             <p class="text-muted mb-0">Complete payment to secure your spot</p>
-                            <a class="btn btn-danger btn-sm" href="{{ route('front.pricing') }}"> Payment <i class="fas fa-credit-card"></i> </a>
+                            <a class="btn btn-danger btn-sm" href="{{ route('front.pricing') }}"> Payment <i
+                                    class="fas fa-credit-card"></i> </a>
                         </div>
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item {{ $user->complete_application == 1 ? 'completed' : ''  }}">
                         <div class="timeline-dot"></div>
                         <div>
                             <h5 class="fw-bold mb-1">Confirmed</h5>
@@ -375,8 +375,23 @@
                 </div>
             </div>
 
+            <!-- Need Help -->
+            <div class="card-custom"
+                style="background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(10, 114, 181, 0.05)); border: 2px solid var(--un-blue);">
+                <h5 class="fw-bold mb-3">
+                    <i class="fas fa-headset me-2"></i>
+                    Need Help?
+                </h5>
+                <p class="mb-3" style="line-height: 1.8;">We're here to help! Contact us if you have any questions.</p>
+                <div class="d-grid gap-2">
+                    <a href="https://wa.me/19175130904" class="btn btn-success-custom btn-custom">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        WhatsApp Support
+                    </a>
+                </div>
+            </div>
             <!-- Upload Documents -->
-            <div class="card-custom">
+            {{-- <div class="card-custom">
                 <div class="card-header-custom">
                     <h3 class="card-title">
                         <i class="fas fa-file-upload me-2"></i>
@@ -436,31 +451,8 @@
                         Submit Documents
                     </button>
                 </div>
-            </div>
+            </div> --}}
 
-            <!-- Payment Section (Shows after documents approved) -->
-            <div class="card-custom" id="paymentSection" style="display: none;">
-                <div class="payment-card">
-                    <i class="fas fa-credit-card" style="font-size: 4rem; margin-bottom: 1.5rem;"></i>
-                    <h3 class="fw-bold mb-3">Payment Required</h3>
-                    <p class="mb-4" style="font-size: 1.2rem; opacity: 0.95;">
-                        Your documents have been approved! Complete your payment to secure your spot.
-                    </p>
-                    <div style="font-size: 3rem; font-weight: 900; margin-bottom: 2rem;">
-                        $950
-                    </div>
-                    <button class="btn btn-lg"
-                        style="background: white; color: #FFA500; font-weight: 800; padding: 1rem 3rem; border-radius: 15px;"
-                        onclick="processPayment()">
-                        <i class="fas fa-lock me-2"></i>
-                        Proceed to Payment
-                    </button>
-                    <p class="mt-3 mb-0" style="font-size: 0.9rem; opacity: 0.9;">
-                        <i class="fas fa-shield-alt me-1"></i>
-                        Secure payment powered by Stripe
-                    </p>
-                </div>
-            </div>
 
         </div>
 
@@ -478,7 +470,7 @@
 
                 <div class="info-row">
                     <span class="info-label">Full Name</span>
-                    <span class="info-value">John Doe</span>
+                    <span class="info-value">{{ $user->name }}</span>
                 </div>
 
                 <div class="info-row">
@@ -517,38 +509,21 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button class="btn btn-outline-primary btn-custom" onclick="window.print()">
-                        <i class="fas fa-print me-2"></i>
-                        Print Application
-                    </button>
 
-                    <button class="btn btn-outline-primary btn-custom" onclick="window.location.href='contact.html'">
+
+                    <a class="btn btn-outline-primary btn-custom" href="{{ route('front.contact') }}">
                         <i class="fas fa-envelope me-2"></i>
                         Contact Support
-                    </button>
+                    </a>
 
-                    <button class="btn btn-outline-primary btn-custom" onclick="window.location.href='faq.html'">
+                    <a class="btn btn-outline-primary btn-custom" href="{{ route('front.faq') }}">
                         <i class="fas fa-question-circle me-2"></i>
                         View FAQs
-                    </button>
-                </div>
-            </div>
-
-            <!-- Need Help -->
-            <div class="card-custom"
-                style="background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(10, 114, 181, 0.05)); border: 2px solid var(--un-blue);">
-                <h5 class="fw-bold mb-3">
-                    <i class="fas fa-headset me-2"></i>
-                    Need Help?
-                </h5>
-                <p class="mb-3" style="line-height: 1.8;">We're here to help! Contact us if you have any questions.</p>
-                <div class="d-grid gap-2">
-                    <a href="https://wa.me/19175130904" class="btn btn-success-custom btn-custom">
-                        <i class="fab fa-whatsapp me-2"></i>
-                        WhatsApp Support
                     </a>
                 </div>
             </div>
+
+
 
         </div>
     </div>

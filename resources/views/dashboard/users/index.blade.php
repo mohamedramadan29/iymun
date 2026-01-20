@@ -40,9 +40,9 @@
                                                 <th>#</th>
                                                 <th> الاسم </th>
                                                 <th> البريد الالكتروني </th>
-                                                <th> تاريخ الميلاد </th>
-                                                <th> الجنس </th>
-                                                <th> الجنسية </th>
+                                                <th> الحالة </th>
+                                                <th> حالة الدفع </th>
+                                                <th> حالة الاكتمال </th>
                                                 <th> تاريخ التسجيل </th>
                                                 <th> العمليات </th>
                                             </tr>
@@ -53,9 +53,15 @@
                                                 <th scope="row">{{ $loop->iteration }}</th>
                                                 <td> {{ $user->name }} </td>
                                                 <td> {{ $user->email }} </td>
-                                                <td> {{ $user->birthdate }} </td>
-                                                <td> {{ $user->gender }} </td>
-                                                <td> {{ $user->nationality }} </td>
+                                                <td> {{ $user->application_status_from_admin }} </td>
+                                                <td> {{ $user->payment_status }} </td>
+                                                <td>
+                                                    @if ($user->complete_application == 1)
+                                                    <span class="badge badge-success">مكتمل</span>
+                                                    @else
+                                                    <span class="badge badge-danger">غير مكتمل</span>
+                                                    @endif
+                                                </td>
                                                 <td> {{ $user->created_at->format('Y/m/d - h:i a') }} </td>
 
                                                 <td>
