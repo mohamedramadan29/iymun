@@ -1,8 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\front\FrontController;
 use App\Http\Controllers\front\RegisterController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\front\auth\UserController;
+use App\Http\Controllers\dashboard\auth\AuthController;
+use App\Http\Controllers\front\auth\ForgetPasswordController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -26,5 +29,25 @@ Route::controller(FrontController::class)->group(function () {
 Route::controller(RegisterController::class)->group(function () {
     Route::get('/register', 'register')->name('front.register');
     Route::post('/register/post', 'registerPost')->name('front.register.post');
+    Route::get('user/confirm/{code}',  'UserConfirm')->name('user.confirm');
     Route::get('login', 'login')->name('front.login');
+    Route::post('login', 'UserLogin')->name('front.login.post');
+    Route::match(['get', 'post'], 'logout', 'logout')->name('front.logout');
+});
+
+################### Start Forget Password Controller ##########################
+
+Route::controller(ForgetPasswordController::class)->group(function () {
+    Route::get('forget-password', 'showForgetPasswordForm')->name('front.forget.password');
+    Route::post('forget-password', 'sendResetLinkEmail')->name('front.forget.password.post');
+    Route::match(['post', 'get'], 'user/change-forget-password/{code}', 'change_forget_password');
+    Route::post('user/update_forget_password', 'update_forget_password')->name('front.update.forget.password');
+});
+################### End Forget Password Controller ##########################
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::controller(UserController::class)->group(function () {
+        Route::get('user/dashboard', 'dashboard')->name('user.dashboard');
+    });
 });

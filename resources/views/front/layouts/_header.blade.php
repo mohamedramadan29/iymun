@@ -18,5 +18,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/front/css/main.css') }}">
     @yield('css')
+    @toastifyCss
 </head>
 <body>

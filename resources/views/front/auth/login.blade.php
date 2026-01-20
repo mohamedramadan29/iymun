@@ -23,16 +23,17 @@
         <h2 class="text-center fw-bold mb-2" style="color: var(--un-blue-dark);">Welcome Back!</h2>
         <p class="text-center text-muted mb-4">Sign in to access your IYMUN dashboard</p>
 
-        <form id="loginForm">
+        <form method="post" action="{{ route('front.login.post') }}">
+            @csrf
             <div class="mb-3">
                 <label class="form-label fw-bold">Email Address</label>
-                <input type="email" class="form-control form-control-custom" placeholder="your.email@example.com"
+                <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control-custom" placeholder="your.email@example.com"
                     required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label fw-bold">Password</label>
-                <input type="password" class="form-control form-control-custom" placeholder="Enter your password"
+                <input type="password" name="password" class="form-control form-control-custom" placeholder="Enter your password"
                     required>
             </div>
 

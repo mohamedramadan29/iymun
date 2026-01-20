@@ -160,6 +160,8 @@
             }
         });
 </script>
+
+@toastifyJs
 </body>
 
 </html>

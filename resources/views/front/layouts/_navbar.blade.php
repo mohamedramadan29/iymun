@@ -34,12 +34,18 @@
                         href="{{ route('front.faq') }}">FAQ</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->is('contact')?'active':'' }}"
                         href="{{ route('front.contact') }}">Contact</a></li>
+                @if(Auth::check())
+                <li class="nav-item ms-lg-2">
+                    <a href="{{ route('user.dashboard') }}" class="btn-register-nav"> Dashboard </a>
+                </li>
+                @else
                 <li class="nav-item ms-lg-2">
                     <a href="{{ route('front.register') }}" class="btn-register-nav">Register</a>
                 </li>
                 <li class="nav-item ms-lg-2">
                     <a href="{{ route('front.login') }}" class="btn-register-nav">login</a>
                 </li>
+                @endif
             </ul>
         </div>
     </div>
