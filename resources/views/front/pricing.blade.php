@@ -17,7 +17,7 @@
         height: 100%;
     }
 
-    .pricing-card-ultimate::before {
+    /* .pricing-card-ultimate::before {
         content: '';
         position: absolute;
         top: -50%;
@@ -27,7 +27,7 @@
         background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
         opacity: 0;
         transition: opacity 0.5s;
-    }
+    } */
 
     .pricing-card-ultimate:hover::before {
         opacity: 1;
@@ -388,9 +388,54 @@
         <!-- Main Packages Row -->
         <div class="row g-4 mb-5">
 
-            <!-- Early Bird Package -->
+            @foreach ($packages as $package)
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="pricing-card-ultimate">
+                    <div class="save-badge" style="background:{{ $package->color }}">{{ $package->getTranslation('slogan',app()->getLocale()) }}!</div>
+
+                    <div class="package-header">
+                        <h3 class="package-name">{{ $package->getTranslation('title',app()->getLocale()) }}</h3>
+                        <div class="package-price" style="color:{{ $package->color }}"> $ {{ $package->price }}</div>
+                        <p class="package-period"> {{ \Carbon\Carbon::parse($package->from_date)->format('F j') }} – {{
+                            \Carbon\Carbon::parse($package->to_date)->format('F j') }} </p>
+                    </div>
+
+                    <div class="section-header-features">✓ What's Included</div>
+                    <ul class="features-list">
+                        @php
+                        $features = explode('#', $package->features);
+                        @endphp
+                        @foreach ($features as $feature)
+                        <li class="included">{{ $feature }}</li>
+                        @endforeach
+                    </ul>
+
+                    {{-- <div class="section-header-excluded">✗ What's NOT Included</div>
+                    <ul class="features-list">
+                        <li class="excluded">Accommodation (hotel/housing)</li>
+                        <li class="excluded">Meals outside conference venue</li>
+                        <li class="excluded">Travel & transportation</li>
+                        <li class="excluded">Visa application fees</li>
+                        <li class="excluded">Personal expenses</li>
+                    </ul> --}}
+
+                    <form action="{{ route('user.payment') }}">
+                        <input type="hidden" name="package_id" value="{{ $package->id }}">
+                        <input type="hidden" name="package_name" value="{{ $package->getTranslation('title',app()->getLocale()) }}">
+                        <input type="hidden" name="package_price" value="{{ $package->price }}">
+                        <button type="submit" class="btn-select-package mt-4" style="background: {{ $package->color }}">
+                            Select Package
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+            @endforeach
+
+            <!-- Early Bird Package -->
+            {{-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing-card-ultimate" >
                     <div class="save-badge">Save Now!</div>
 
                     <div class="package-header">
@@ -429,10 +474,10 @@
                     </form>
 
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Regular Registration (Most Popular) -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            {{-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="pricing-card-ultimate pricing-card-featured">
                     <div class="featured-badge">🔥 MOST POPULAR</div>
 
@@ -468,10 +513,10 @@
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- VIP Registration -->
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            {{-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="pricing-card-ultimate">
                     <div class="vip-badge">💎 PREMIUM</div>
 
@@ -506,7 +551,7 @@
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- USA Residents Package -->

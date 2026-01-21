@@ -16,7 +16,7 @@
                             <div class="card-body">
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
-                                        <h3 class="info"> 2 </h3>
+                                        <h3 class="info"> {{ $users->count() }} </h3>
                                         <h6> المستخدمين والطلبات </h6>
                                     </div>
                                     <div>
@@ -33,7 +33,7 @@
                             <div class="card-body">
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
-                                        <h3 class="info"> 5 </h3>
+                                        <h3 class="info"> {{ $users_under_review->count() }} </h3>
                                         <h6> طلبات تحت المراجعة </h6>
                                     </div>
                                     <div>
@@ -50,7 +50,7 @@
                             <div class="card-body">
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
-                                        <h3 class="info"> 3 </h3>
+                                        <h3 class="info"> {{ $users_approved->count() }} </h3>
                                         <h6> طلبات تمت الموافقة عليها </h6>
                                     </div>
                                     <div>
@@ -67,7 +67,7 @@
                             <div class="card-body">
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
-                                        <h3 class="info"> 4 </h3>
+                                        <h3 class="info"> {{ $users_completed->count() }} </h3>
                                         <h6> تم اكمال الدفع </h6>
                                     </div>
                                     <div>
@@ -84,7 +84,7 @@
                             <div class="card-body">
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
-                                        <h3 class="info"> 5 </h3>
+                                        <h3 class="info"> {{ $users_rejected->count() }} </h3>
                                         <h6> طلبات مرفوضة </h6>
                                     </div>
                                     <div>

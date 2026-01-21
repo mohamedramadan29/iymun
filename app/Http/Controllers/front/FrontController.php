@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Package;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -29,7 +30,8 @@ class FrontController extends Controller
 
     public function pricing()
     {
-        return view('front.pricing');
+        $packages = Package::all();
+        return view('front.pricing',compact('packages'));
     }
 
     public function venue()

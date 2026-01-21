@@ -46,8 +46,32 @@
                             data-i18n="nav.users.user_profile"> الايميلات
                         </a>
                     </li>
+                </ul>
+            </li>
 
+            <li class="nav-item {{ Route::is('dashboard.packages.*') ? 'active' : '' }}"><a href="#"><i
+                        class="la la-television"></i><span class="menu-title" data-i18n="nav.users.main">
+                        الخطط والاسعار
+                    </span></a>
+                <ul class="menu-content">
+                    <li class="{{ Route::is('dashboard.packages.index') ? 'active' : '' }}">
+                        <a class="menu-item" href="{{ route('dashboard.packages.index') }}"
+                            data-i18n="nav.users.user_profile"> الخطط والاسعار
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
+            <li class="nav-item {{ Route::is('dashboard.content.*') ? 'active' : '' }}"><a href="#"><i
+                        class="la la-television"></i><span class="menu-title" data-i18n="nav.users.main">
+                        محتوي الصفحات
+                    </span></a>
+                <ul class="menu-content">
+                    <li class="{{ Route::is('dashboard.content.home') ? 'active' : '' }}">
+                        <a class="menu-item" href="{{ route('dashboard.content.home') }}"
+                            data-i18n="nav.users.user_profile"> الصفحة الرئيسية
+                        </a>
+                    </li>
                 </ul>
             </li>
 

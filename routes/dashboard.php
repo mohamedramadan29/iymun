@@ -9,7 +9,9 @@ use App\Http\Controllers\dashboard\auth\AuthController;
 use App\Http\Controllers\dashboard\NotificationController;
 use App\Http\Controllers\dashboard\auth\ResetPasswordController;
 use App\Http\Controllers\dashboard\auth\ForgetPasswordController;
+use App\Http\Controllers\dashboard\content\HomeController;
 use App\Http\Controllers\dashboard\MailsController;
+use App\Http\Controllers\dashboard\PackagesController;
 use App\Http\Controllers\dashboard\PaymentsController;
 use App\Http\Controllers\dashboard\SpotDifferenceImageController;
 use App\Http\Controllers\dashboard\UsersController;
@@ -128,5 +130,25 @@ Route::group([
             Route::post('mail/store', 'send')->name('mail.store');
         });
         ######################### End Mails Controller #########################
+
+        ####################### Start Packages Controller #######################
+
+        Route::controller(PackagesController::class)->group(function () {
+            Route::get('packages', 'index')->name('packages.index');
+            Route::get('package/create', 'create')->name('package.create');
+            Route::post('package/store', 'store')->name('package.store');
+            Route::get('package/edit/{id}', 'edit')->name('package.edit');
+            Route::post('package/update/{id}', 'update')->name('package.update');
+            Route::get('package/destroy/{id}', 'destroy')->name('package.destroy');
+        });
+        ######################## End Packages Controller #########################
+
+        ##################### Start Content Controller  ##############
+        ###################### Start Home Page Controller ###########
+
+        Route::controller(HomeController::class)->group(function () {
+            Route::get('content/home', 'index')->name('content.home');
+            Route::post('content/home/update', 'update')->name('content.home.update');
+        });
     });
 });

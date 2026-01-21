@@ -10,6 +10,7 @@ use App\Models\front\Payment;
 use App\Http\Traits\Message_Trait;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\admin\Package;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Stripe\Exception\ApiErrorException;
@@ -26,9 +27,10 @@ class PaymentController extends Controller
             if (!$user) {
                 return Redirect()->back()->withErrors(['يجب تسجيل الدخول اولا']);
             }
-            $package_id = 1;
-            $package_name = 'Early Bird';
-            $price = 10;
+            $package_id = $data['package_id'];
+            $package_name = $data['package_name'];
+            // $package = Package::where('id', $package_id)->first();
+            $price = $data['package_price'];
             Stripe::setApiKey(env('STRIPE_SECRET'));
             $metadata = [
                 'user_id' => Auth::id(),
@@ -75,8 +77,8 @@ class PaymentController extends Controller
             }
 
             $metadata = $session->metadata;
-            // $product = Product::findOrFail($metadata->product_id);
-            $package_price = 10;
+            // $package = Package::findOrFail($metadata->product_id);
+            $package_price = $metadata->price;
 
             DB::beginTransaction();
             $payment = new Payment();
