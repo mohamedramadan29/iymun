@@ -9,6 +9,8 @@ use App\Http\Controllers\dashboard\auth\AuthController;
 use App\Http\Controllers\dashboard\NotificationController;
 use App\Http\Controllers\dashboard\auth\ResetPasswordController;
 use App\Http\Controllers\dashboard\auth\ForgetPasswordController;
+use App\Http\Controllers\dashboard\MailsController;
+use App\Http\Controllers\dashboard\PaymentsController;
 use App\Http\Controllers\dashboard\SpotDifferenceImageController;
 use App\Http\Controllers\dashboard\UsersController;
 
@@ -101,10 +103,30 @@ Route::group([
         ################################# Start Users Controller #################
         Route::controller(UsersController::class)->group(function () {
             Route::get('users', 'index')->name('users.index');
-            Route::get('user/details/{id}','details')->name('user.details');
-            Route::post('user/destroy/{id}','destroy')->name('user.destroy');
-            Route::post('user/change_status/{id}','changeStatus')->name('user.change_status');
-            Route::get('user/complete_application/{id}','completeApplication')->name('user.complete_application');
+            Route::get('user/details/{id}', 'details')->name('user.details');
+            Route::post('user/destroy/{id}', 'destroy')->name('user.destroy');
+            Route::post('user/change_status/{id}', 'changeStatus')->name('user.change_status');
+            Route::get('user/complete_application/{id}', 'completeApplication')->name('user.complete_application');
+            Route::get('user/mail/create/{id}', 'create')->name('user.mail.create');
+            Route::post('user/mail/store', 'send')->name('user.mail.store');
         });
+
+        ############################ Start Payments Controller ####################
+
+        Route::controller(PaymentsController::class)->group(function () {
+            Route::get('payments', 'index')->name('payments.index');
+        });
+        ############################# End Payments Controller ####################
+
+        ######################### Start Mails Controller #######################
+
+
+        Route::controller(MailsController::class)->group(function () {
+            Route::get('mails', 'index')->name('mails.index');
+            Route::get('mail/details/{id}', 'details')->name('mail.details');
+            Route::get('mail/create', 'create')->name('mail.create');
+            Route::post('mail/store', 'send')->name('mail.store');
+        });
+        ######################### End Mails Controller #########################
     });
 });

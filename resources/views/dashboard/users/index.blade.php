@@ -69,6 +69,10 @@
                                                         class="btn btn-info btn-sm">
                                                         <i class="la la-eye"></i>
                                                     </a>
+                                                     <a href="{{ route('dashboard.user.mail.create', $user->id) }}"
+                                                        class="btn btn-warning btn-sm">
+                                                        <i class="la la-envelope"></i>
+                                                    </a>
                                                     <a href="{{ route('dashboard.user.destroy', $user->id) }}"
                                                         class="btn btn-danger btn-sm"
                                                         onclick="return(confirm('هل انت متاكد من الحذف '))">

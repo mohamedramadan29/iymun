@@ -1,21 +1,21 @@
 @extends('dashboard.layouts.app')
 
-@section('title', 'انشاء صلاحية جديدة')
+@section('title', ' اضافة بريد جديد ')
 
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> الصلاحيات </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> اضافة بريد جديد </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.roles.index') }}"> الصلاحيات </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.mails.index') }}"> الايميلات </a>
                             </li>
-                            <li class="breadcrumb-item active"><a href="#"> اضافة صلاحية جديدة </a>
+                            <li class="breadcrumb-item active"><a href="#"> اضافة بريد الكتروني جديد </a>
                             </li>
                         </ol>
                     </div>
@@ -30,48 +30,51 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> اضافة صلاحية جديدة </h4>
+                                <h4 class="card-title" id="basic-layout-form"> اضافة بريد الكتروني جديد </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
 
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <form class="form" method="POST" action="{{ route('dashboard.roles.create') }}">
+                                    <form class="form" method="POST" action="{{ route('dashboard.mail.store') }}">
                                         @csrf
                                         <div class="form-body">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="projectinput1">اسم الصلاحية </label>
-                                                        <input type="text" id="projectinput1" class="form-control"
-                                                            placeholder=" اسم الصلاحية  " name="role">
+                                                        <label for="name"> الاسم </label>
+                                                        <input type="text" id="name" class="form-control"
+                                                            placeholder="  name " name="name" required
+                                                            value="{{ old('name') }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="email"> البريد الالكتروني </label>
+                                                        <input type="email" id="email" class="form-control"
+                                                            placeholder="  email " name="email" required
+                                                            value="{{ old('email') }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="subject"> عنوان الرسالة </label>
+                                                        <input type="text" id="subject" class="form-control"
+                                                            placeholder="  subject " name="subject" required
+                                                            value="{{ old('subject') }}">
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="row">
-                                                <div class="col-md-12">
+
+                                                <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="projectinput3"> حدد الصلاحيات </label>
-                                                        <br>
-                                                        <div class="row">
-                                                            @foreach (config('permissions') as $key => $value)
-                                                            <div class="col-3">
-                                                                <div class="form-check">
-                                                                    <input name="permissions[]" class="form-check-input"
-                                                                        type="checkbox" value="{{ $key }}"
-                                                                        id="{{ $value }}">
-                                                                    <label class="form-check-label" for="{{ $value }}">
-                                                                        {{ $value }}
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                            @endforeach
-
-
-                                                        </div>
+                                                        <label for="subject"> الرسالة </label>
+                                                        <textarea name="message" required id=""
+                                                            class="form-control">{{ old('message') }}</textarea>
                                                     </div>
                                                 </div>
-
                                             </div>
 
                                         </div>

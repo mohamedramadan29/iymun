@@ -6,14 +6,44 @@
                     href="{{ route('dashboard.welcome') }}"><i class="la la-home"></i><span class="menu-title"
                         data-i18n="nav.dash.main">الرئيسية</span></a>
             </li>
-             <li class="nav-item {{ Route::is('dashboard.users.*') ? 'active' : '' }}"><a href="#"><i
+            <li class="nav-item {{ Route::is('dashboard.users.*') ? 'active' : '' }}"><a href="#"><i
                         class="la la-file-text"></i><span class="menu-title" data-i18n="nav.users.main">
-                     ادارة الطلبات
+                        ادارة الطلبات
                     </span></a>
                 <ul class="menu-content">
                     <li class="{{ Route::is('dashboard.users.index') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.users.index') }}"
-                            data-i18n="nav.users.user_profile">  الطلبات والمستخدمين
+                            data-i18n="nav.users.user_profile"> الطلبات والمستخدمين
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li class="nav-item {{ Route::is('dashboard.payments.*') ? 'active' : '' }}"><a href="#"><i
+                        class="la la-credit-card"></i><span class="menu-title" data-i18n="nav.users.main">
+                        المدفوعات
+                    </span></a>
+                <ul class="menu-content">
+                    <li class="{{ Route::is('dashboard.payments.index') ? 'active' : '' }}">
+                        <a class="menu-item" href="{{ route('dashboard.payments.index') }}"
+                            data-i18n="nav.users.user_profile"> المدفوعات
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li class="nav-item {{ Route::is('dashboard.mails.*') ? 'active' : '' }}"><a href="#"><i
+                        class="la la-envelope"></i><span class="menu-title" data-i18n="nav.users.main">
+                        ادراة ارسال الايميلات
+                    </span></a>
+                <ul class="menu-content">
+                    <li class="{{ Route::is('dashboard.mails.index') ? 'active' : '' }}">
+                        <a class="menu-item" href="{{ route('dashboard.mails.index') }}"
+                            data-i18n="nav.users.user_profile"> الايميلات
                         </a>
                     </li>
 
