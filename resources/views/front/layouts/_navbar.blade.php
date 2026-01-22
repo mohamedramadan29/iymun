@@ -16,23 +16,23 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/') ? 'active' : '' }}"
                         href="{{ route('front.index') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('about') ? 'active' : '' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/about') ? 'active' : '' }}"
                         href="{{ route('front.about') }}">About</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('committees') ? 'active' : '' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/committees') ? 'active' : '' }}"
                         href="{{ route('front.committees') }}">Committees</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('why-us') ? 'active' : '' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/why-us') ? 'active' : '' }}"
                         href="{{ route('front.why-us') }}">Why Join</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('pricing') ? 'active' : '' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/pricing') ? 'active' : '' }}"
                         href="{{ route('front.pricing') }}">Pricing</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('venue') ? 'active' : '' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/venue') ? 'active' : '' }}"
                         href="{{ route('front.venue') }}">Venue</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('partners') ? 'active' : '' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/partners') ? 'active' : '' }}"
                         href="{{ route('front.partners') }}">Partners</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('faq')?'active':'' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/faq')?'active':'' }}"
                         href="{{ route('front.faq') }}">FAQ</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('contact')?'active':'' }}"
+                <li class="nav-item"><a class="nav-link {{ request()->is('*/contact')?'active':'' }}"
                         href="{{ route('front.contact') }}">Contact</a></li>
                 @if(Auth::check())
                 <li class="nav-item ms-lg-2">

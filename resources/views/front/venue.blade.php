@@ -89,34 +89,35 @@
 @endsection
 @section('content')
 
- <!-- ==================== PAGE HERO ==================== -->
-    <section class="hero-wrapper" style="height: 70vh; min-height: 500px;">
-        <div class="hero-slider">
-            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=1920&q=80');"></div>
+<!-- ==================== PAGE HERO ==================== -->
+<section class="hero-wrapper" style="height: 70vh; min-height: 500px;">
+    <div class="hero-slider">
+        <div class="hero-slide active"
+            style="background-image: url('{{ asset('assets/uploads/content/venue/'.$content->hero_image) }}?w=1920&q=80');">
+        </div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <div class="hero-badge fade-in-up">
+            {{ $content->getTranslation('hero_title',app()->getLocale()) }}
         </div>
 
-        <div class="hero-overlay"></div>
+        <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+            {{ $content->getTranslation('hero_sub_title',app()->getLocale()) }} <span class="gradient-text"> {{
+                $content->getTranslation('hero_color_title',app()->getLocale()) }} </span>
+        </h1>
 
-        <div class="hero-content">
-            <div class="hero-badge fade-in-up">
-                Our Venue
-            </div>
+        <p class="hero-subtitle fade-in-up" style="max-width: 900px; margin: 0 auto;">
+            {{ $content->getTranslation('hero_description',app()->getLocale()) }}
+        </p>
+    </div>
 
-            <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
-                Welcome to
-                <span class="gradient-text">New York City</span>
-            </h1>
-
-            <p class="hero-subtitle fade-in-up" style="max-width: 900px; margin: 0 auto;">
-                Experience diplomacy in the world's most iconic city
-            </p>
-        </div>
-
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
 
 <!-- ==================== COMING SOON ==================== -->
 <section class="section section-light" style="padding-top: 5rem;">
@@ -126,15 +127,14 @@
                 <div class="coming-soon-box" data-aos="zoom-in">
                     <div class="icon-large">🗽</div>
                     <h2 class="display-4 fw-bold mb-4" style="color: var(--un-blue-dark);">
-                        Venue Details Coming Soon
+                        {{ $content->getTranslation('coming_soon_title',app()->getLocale()) }}
                     </h2>
                     <p class="lead mb-0" style="color: var(--gray); font-size: 1.3rem; line-height: 1.9;">
-                        We're finalizing the perfect venue in the heart of Manhattan for IYMUN New York 2026.
+                        {{ $content->getTranslation('coming_soon_p1',app()->getLocale()) }}
                     </p>
                     <hr class="my-4" style="opacity: 0.2;">
                     <p style="color: var(--gray); font-size: 1.1rem; line-height: 1.8;">
-                        Detailed venue information, including exact location, facilities, and New York experience
-                        activities, will be announced soon. Stay tuned for updates!
+                        {{ $content->getTranslation('coming_soon_p2',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -149,9 +149,10 @@
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="feature-box">
                     <div class="feature-icon">🏛️</div>
-                    <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">Prime Location</h3>
+                    <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{
+                        $content->getTranslation('adv_title1',app()->getLocale()) }} </h3>
                     <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
-                        Manhattan, New York City
+                        {{ $content->getTranslation('adv_p1',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -159,9 +160,10 @@
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="feature-box">
                     <div class="feature-icon">🎤</div>
-                    <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">Professional Facilities</h3>
+                    <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{
+                        $content->getTranslation('adv_title2',app()->getLocale()) }} </h3>
                     <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
-                        State-of-the-art conference rooms
+                        {{ $content->getTranslation('adv_p3',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -169,9 +171,10 @@
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="feature-box">
                     <div class="feature-icon">🚇</div>
-                    <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">Easy Access</h3>
+                    <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{
+                        $content->getTranslation('adv_title3',app()->getLocale()) }} </h3>
                     <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
-                        Connected to major transportation
+                        {{ $content->getTranslation('adv_p3',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -184,10 +187,10 @@
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="display-4 fw-bold mb-3" data-aos="fade-up" style="color: var(--un-blue-dark);">
-                Why New York City?
+                {{ $content->getTranslation('why_title',app()->getLocale()) }}
             </h2>
             <p class="lead" data-aos="fade-up" data-aos-delay="100" style="color: var(--gray);">
-                The global capital of diplomacy and international cooperation
+                {{ $content->getTranslation('why_p1',app()->getLocale()) }}
             </p>
         </div>
 
@@ -195,10 +198,9 @@
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="why-nyc-card">
                     <div class="why-icon">🗽</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);">Iconic Landmarks</h4>
+                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('why_title_point1',app()->getLocale()) }} </h4>
                     <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray);">
-                        Home to the Statue of Liberty, Times Square, Central Park, and countless world-famous
-                        attractions
+                        {{ $content->getTranslation('why_p_point1',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -206,9 +208,9 @@
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="why-nyc-card">
                     <div class="why-icon">🏛️</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);">UN Headquarters</h4>
+                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('why_title_point2',app()->getLocale()) }} </h4>
                     <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray);">
-                        The heart of international diplomacy and global decision-making
+                        {{ $content->getTranslation('why_p_point2',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -216,9 +218,9 @@
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="why-nyc-card">
                     <div class="why-icon">🌍</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);">Cultural Diversity</h4>
+                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('why_title_point3',app()->getLocale()) }} </h4>
                     <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray);">
-                        One of the world's most diverse cities with cultures from every corner of the globe
+                        {{ $content->getTranslation('why_p_point3',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -226,9 +228,9 @@
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="why-nyc-card">
                     <div class="why-icon">🎭</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);">Arts & Entertainment</h4>
+                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('why_title_point4',app()->getLocale()) }} </h4>
                     <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray);">
-                        Broadway shows, world-class museums, and vibrant cultural scene
+                        {{ $content->getTranslation('why_p_point4',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -236,9 +238,9 @@
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                 <div class="why-nyc-card">
                     <div class="why-icon">🍕</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);">Global Cuisine</h4>
+                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('why_title_point5',app()->getLocale()) }} </h4>
                     <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray);">
-                        Authentic food from every culture in NYC's diverse neighborhoods
+                        {{ $content->getTranslation('why_p_point5',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -246,9 +248,9 @@
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                 <div class="why-nyc-card">
                     <div class="why-icon">💼</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);">Business Hub</h4>
+                    <h4 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('why_title_point6',app()->getLocale()) }} </h4>
                     <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray);">
-                        The financial and business capital of the world
+                        {{ $content->getTranslation('why_p_point6',app()->getLocale()) }}
                     </p>
                 </div>
             </div>
@@ -308,5 +310,5 @@
     </div>
 </section>
 
- 
+
 @endsection

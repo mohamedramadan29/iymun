@@ -72,6 +72,27 @@
                             data-i18n="nav.users.user_profile"> الصفحة الرئيسية
                         </a>
                     </li>
+                    <li class="{{ Route::is('dashboard.content.about') ? 'active' : '' }}">
+                        <a class="menu-item" href="{{ route('dashboard.content.about') }}"
+                            data-i18n="nav.users.user_profile"> من نحن
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('dashboard.content.committee') ? 'active' : '' }}">
+                        <a class="menu-item" href="{{ route('dashboard.content.committee') }}"
+                            data-i18n="nav.users.user_profile"> اللجان
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('dashboard.content.why-join') ? 'active' : '' }}">
+                        <a class="menu-item" href="{{ route('dashboard.content.why-join') }}"
+                            data-i18n="nav.users.user_profile"> لماذا تنضم الينا
+                        </a>
+                    </li>
+                    <li class="{{ Route::is('dashboard.content.venue') ? 'active' : '' }}">
+                        <a class="menu-item" href="{{ route('dashboard.content.venue') }}"
+                            data-i18n="nav.users.user_profile"> المكان (Venue)
+                        </a>
+                    </li>
+
                 </ul>
             </li>
 

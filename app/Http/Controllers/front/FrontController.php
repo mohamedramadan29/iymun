@@ -3,29 +3,38 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
-use App\Models\admin\Package;
+use App\Models\dashboard\Package;
+use App\Models\dashboard\AboutPage;
+use App\Models\dashboard\CommitteePage;
+use App\Models\dashboard\homePage;
+use App\Models\dashboard\VenuePage;
+use App\Models\dashboard\WhyJoin;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function index()
     {
-        return view('front.index');
+        $content = homePage::first();
+        return view('front.index',compact('content'));
     }
 
     public function about()
     {
-        return view('front.about');
+        $content = AboutPage::first();
+        return view('front.about',compact('content'));
     }
 
     public function committees()
     {
-        return view('front.committees');
+        $content = CommitteePage::first();
+        return view('front.committees',compact('content'));
     }
 
     public function whyUs()
     {
-        return view('front.why-us');
+        $content = WhyJoin::first();
+        return view('front.why-us',compact('content'));
     }
 
     public function pricing()
@@ -36,7 +45,8 @@ class FrontController extends Controller
 
     public function venue()
     {
-        return view('front.venue');
+        $content = VenuePage::first();
+        return view('front.venue',compact('content'));
     }
 
     public function partners()

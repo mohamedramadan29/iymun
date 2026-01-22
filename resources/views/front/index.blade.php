@@ -7,14 +7,14 @@
     <!-- Background Slider -->
     <div class="hero-slider">
         <div class="hero-slide active"
-            style="background-image: url('https://images.unsplash.com/photo-1725618878496-233974f2fd59?w=1920&q=80');">
+            style="background-image: url('{{ asset('assets/uploads/content/home/'.$content['hero_img1']) }}?w=1920&q=80');">
         </div>
         <div class="hero-slide"
-            style="background-image: url('https://images.unsplash.com/photo-1673296634599-ad02e65600ff?w=1920&q=80');">
+            style="background-image: url('{{ asset('assets/uploads/content/home/'.$content['hero_img2']) }}?w=1920&q=80');">
         </div>
 
         <div class="hero-slide"
-            style="background-image: url('https://images.unsplash.com/photo-1572536977487-697d036fa442?w=1920&q=80');">
+            style="background-image: url('{{ asset('assets/uploads/content/home/'.$content['hero_img3']) }}?w=1920&q=80');">
         </div>
     </div>
 
@@ -24,21 +24,49 @@
     <!-- Content -->
     <div class="hero-content">
         <div class="hero-badge fade-in-up">
-            🌍 International Youth Diplomacy Conference
+            {{ $content->getTranslation('hero_first_title',app()->getLocale()) }}
         </div>
 
         <h1 class="hero-title fade-in-up">
-            Where Future Diplomats<br>
-            Shape <span class="gradient-text">Global Dialogue</span>
+            <?php
+               // جيب الجملة كاملة من الداتابيز
+        $subTitle = $content->getTranslation('hero_main_title', app()->getLocale());
+
+        // فصل الكلمات إلى array
+        $words = explode(' ', trim($subTitle));
+
+        // عدد الكلمات
+        $wordCount = count($words);
+
+        // لو فيه كلمتين أو أكتر، خد آخر كلمتين
+        if ($wordCount >= 2) {
+            $lastWord1 = $words[$wordCount - 3];  // Global
+            $lastWord2 = $words[$wordCount - 2];  // Global
+            $lastWord3 = $words[$wordCount - 1];  // Dialogue
+
+            // الجزء الأول من الجملة (كل الكلمات ما عدا آخر كلمتين)
+            $firstPart = implode(' ', array_slice($words, 0, $wordCount - 3));
+        } else {
+            // لو الجملة أقل من كلمتين (نادر)، خليها كلها أول جزء
+            $firstPart = $subTitle;
+            $lastWord1 = '';
+            $lastWord2 = '';
+            $lastWord3 = '';
+        }
+                ?>
+            {!! !empty($firstPart) ? $firstPart : '' !!}
+            <br>
+            {{ $lastWord1 }} <span class="gradient-text">{{ $lastWord2 }} {{ $lastWord3 }}</span>
+
         </h1>
 
         <p class="hero-subtitle fade-in-up">
-            IYMUN & American Diplomats Model United Nations
+            {{ $content->getTranslation('hero_p',app()->getLocale()) }}
         </p>
 
         <div class="hero-location fade-in-up">
-            <span>📍 New York City, USA</span>
-            <span>🗓️ October 2026</span>
+            <span> {{ $content->getTranslation('hero_city',app()->getLocale()) }} </span>
+            <span> {{ $content->getTranslation('hero_date',app()->getLocale()) }} </span>
         </div>
 
         <div class="hero-buttons fade-in-up">
@@ -73,12 +101,12 @@
     </div>
 
     <div class="container" style="position: relative; z-index: 2;">
-        <h2 class="section-title" data-aos="fade-up">Conference Highlights</h2>
+        <h2 class="section-title" data-aos="fade-up"> {{ $content->getTranslation('conference_title',app()->getLocale())
+            }} </h2>
         <p class=" text-center mb-5 section-subtitle"
             style="max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.95;" data-aos="fade-up"
             data-aos-delay="100">
-            Experience world-class diplomacy, leadership development, and international networking in the heart of New
-            York City
+            {{ $content->getTranslation('conference_p',app()->getLocale()) }}
         </p>
 
         <div class="row g-4">
@@ -89,8 +117,9 @@
                         style="background: linear-gradient(135deg, #FFD700, #FFA500); width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);">
                         <span style="font-size: 2.5rem;">🌍</span>
                     </div>
-                    <h3 class="card-title">Global Network</h3>
-                    <p class="card-text">Connect with youth leaders from 50+ countries across 6 continents</p>
+                    <h3 class="card-title"> {{ $content->getTranslation('conference_step_title1',app()->getLocale()) }}
+                    </h3>
+                    <p class="card-text"> {{ $content->getTranslation('conference_step_p1',app()->getLocale()) }} </p>
                 </div>
             </div>
 
@@ -101,8 +130,9 @@
                         style="background: linear-gradient(135deg, #4A90E2, #0A72B5); width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);">
                         <span style="font-size: 2.5rem;">🎓</span>
                     </div>
-                    <h3 class="card-title">Expert Mentorship</h3>
-                    <p class="card-text">Learn from American diplomats and UN professionals</p>
+                    <h3 class="card-title"> {{ $content->getTranslation('conference_step_title2',app()->getLocale()) }}
+                    </h3>
+                    <p class="card-text"> {{ $content->getTranslation('conference_step_p2',app()->getLocale()) }} </p>
                 </div>
             </div>
 
@@ -113,8 +143,9 @@
                         style="background: linear-gradient(135deg, #10B981, #34D399); width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);">
                         <span style="font-size: 2.5rem;">🏛️</span>
                     </div>
-                    <h3 class="card-title">UN Headquarters</h3>
-                    <p class="card-text">Exclusive visit to the United Nations complex in NYC</p>
+                    <h3 class="card-title"> {{ $content->getTranslation('conference_step_title3',app()->getLocale()) }}
+                    </h3>
+                    <p class="card-text"> {{ $content->getTranslation('conference_step_p3',app()->getLocale()) }} </p>
                 </div>
             </div>
 
@@ -125,8 +156,9 @@
                         style="background: linear-gradient(135deg, #EF4444, #F87171); width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4);">
                         <span style="font-size: 2.5rem;">🏆</span>
                     </div>
-                    <h3 class="card-title">Certificates</h3>
-                    <p class="card-text">Official recognition from IYMUN and American Diplomats</p>
+                    <h3 class="card-title"> {{ $content->getTranslation('conference_step_title4',app()->getLocale()) }}
+                    </h3>
+                    <p class="card-text"> {{ $content->getTranslation('conference_step_p4',app()->getLocale()) }} </p>
                 </div>
             </div>
         </div>
@@ -140,9 +172,9 @@
     <div class="container parallax-content">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0 text-white" data-aos="fade-right">
-                <h2 class="display-3 fw-bold mb-4">Why New York City? 🗽</h2>
+                <h2 class="display-3 fw-bold mb-4"> {{ $content->getTranslation('why_title',app()->getLocale()) }} </h2>
                 <p class="lead mb-4" style="font-size: 1.4rem;">
-                    New York City isn't just a location—it's the epicenter of global diplomacy, culture, and innovation.
+                    {{ $content->getTranslation('why_p',app()->getLocale()) }}
                 </p>
 
                 <div class="row g-4">
@@ -151,8 +183,10 @@
                             style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
                             <div class="me-3" style="font-size: 3rem;">🏛️</div>
                             <div>
-                                <h5 class="fw-bold mb-2">Visit the UN Headquarters</h5>
-                                <p class="mb-0" style="opacity: 0.9;">Experience where world leaders shape history</p>
+                                <h5 class="fw-bold mb-2"> {{
+                                    $content->getTranslation('why_step_title1',app()->getLocale()) }} </h5>
+                                <p class="mb-0" style="opacity: 0.9;"> {{
+                                    $content->getTranslation('why_step_p1',app()->getLocale()) }} </p>
                             </div>
                         </div>
                     </div>
@@ -162,9 +196,10 @@
                             style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
                             <div class="me-3" style="font-size: 3rem;">🌆</div>
                             <div>
-                                <h5 class="fw-bold mb-2">Cultural Melting Pot</h5>
-                                <p class="mb-0" style="opacity: 0.9;">800+ languages spoken in the world's most diverse
-                                    city</p>
+                                <h5 class="fw-bold mb-2"> {{
+                                    $content->getTranslation('why_step_title2',app()->getLocale()) }} </h5>
+                                <p class="mb-0" style="opacity: 0.9;"> {{
+                                    $content->getTranslation('why_step_p2',app()->getLocale()) }} </p>
                             </div>
                         </div>
                     </div>
@@ -174,9 +209,10 @@
                             style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
                             <div class="me-3" style="font-size: 3rem;">🎯</div>
                             <div>
-                                <h5 class="fw-bold mb-2">Networking Capital</h5>
-                                <p class="mb-0" style="opacity: 0.9;">Connect in the financial and diplomatic hub of the
-                                    world</p>
+                                <h5 class="fw-bold mb-2"> {{
+                                    $content->getTranslation('why_step_title3',app()->getLocale()) }} </h5>
+                                <p class="mb-0" style="opacity: 0.9;"> {{
+                                    $content->getTranslation('why_step_p3',app()->getLocale()) }} </p>
                             </div>
                         </div>
                     </div>
@@ -187,10 +223,10 @@
                 <div class="text-center text-white p-5 rounded-4"
                     style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
                     <div style="font-size: 8rem; margin-bottom: 1rem;">🗽</div>
-                    <h3 class="display-5 fw-bold mb-3">The City That Never Sleeps</h3>
+                    <h3 class="display-5 fw-bold mb-3"> {{ $content->getTranslation('why_main_title',app()->getLocale())
+                        }} </h3>
                     <p class="lead" style="opacity: 0.9;">
-                        From Wall Street to the UN, Times Square to Central Park—an unmatched backdrop for your
-                        diplomatic journey.
+                        {{ $content->getTranslation('why_main_p',app()->getLocale()) }}
                     </p>
                 </div>
             </div>

@@ -2,19 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboard\AdminController;
+use App\Http\Controllers\dashboard\MailsController;
 use App\Http\Controllers\dashboard\RolesController;
+use App\Http\Controllers\dashboard\UsersController;
 use App\Http\Controllers\dashboard\SettingController;
 use App\Http\Controllers\dashboard\WelcomeController;
-use App\Http\Controllers\dashboard\auth\AuthController;
-use App\Http\Controllers\dashboard\NotificationController;
-use App\Http\Controllers\dashboard\auth\ResetPasswordController;
-use App\Http\Controllers\dashboard\auth\ForgetPasswordController;
-use App\Http\Controllers\dashboard\content\HomeController;
-use App\Http\Controllers\dashboard\MailsController;
 use App\Http\Controllers\dashboard\PackagesController;
 use App\Http\Controllers\dashboard\PaymentsController;
+use App\Http\Controllers\dashboard\auth\AuthController;
+use App\Http\Controllers\dashboard\content\HomeController;
+use App\Http\Controllers\dashboard\NotificationController;
+use App\Http\Controllers\dashboard\content\AboutController;
+use App\Http\Controllers\dashboard\auth\ResetPasswordController;
+use App\Http\Controllers\dashboard\auth\ForgetPasswordController;
 use App\Http\Controllers\dashboard\SpotDifferenceImageController;
-use App\Http\Controllers\dashboard\UsersController;
 
 Route::group([
     'prefix' => '/dashboard',
@@ -149,6 +150,34 @@ Route::group([
         Route::controller(HomeController::class)->group(function () {
             Route::get('content/home', 'index')->name('content.home');
             Route::post('content/home/update', 'update')->name('content.home.update');
+        });
+
+        ###################### Start About Page Controller ###########
+
+        Route::controller(AboutController::class)->group(function () {
+            Route::get('content/about', 'index')->name('content.about');
+            Route::post('content/about/update', 'update')->name('content.about.update');
+        });
+
+        ###################### Start Committee Page Controller ###########
+
+        Route::controller(\App\Http\Controllers\dashboard\content\CommitteeController::class)->group(function () {
+            Route::get('content/committee', 'index')->name('content.committee');
+            Route::post('content/committee/update', 'update')->name('content.committee.update');
+        });
+
+        ###################### Start Why Join Page Controller ###########
+
+        Route::controller(\App\Http\Controllers\dashboard\content\WhyJoinController::class)->group(function () {
+            Route::get('content/why-join', 'index')->name('content.why-join');
+            Route::post('content/why-join/update', 'update')->name('content.why-join.update');
+        });
+
+        ###################### Start Venue Page Controller ###########
+
+        Route::controller(\App\Http\Controllers\dashboard\content\VenuController::class)->group(function () {
+            Route::get('content/venue', 'index')->name('content.venue');
+            Route::post('content/venue/update', 'update')->name('content.venue.update');
         });
     });
 });

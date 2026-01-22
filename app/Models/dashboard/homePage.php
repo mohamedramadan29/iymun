@@ -16,6 +16,7 @@ class homePage extends Model
         'hero_main_title',
         'hero_p',
         'hero_city',
+        'hero_date',
         'conference_title',
         'conference_p',
         'conference_step_title1',

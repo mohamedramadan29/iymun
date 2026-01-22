@@ -2,10 +2,11 @@
 @section('title', 'Why Join IYMUN 2026 | Benefits & Opportunities')
 @section('content')
 <!-- ==================== PAGE HERO ==================== -->
+<!-- ==================== PAGE HERO ==================== -->
 <section class="hero-wrapper" style="height: 70vh; min-height: 500px;">
     <div class="hero-slider">
         <div class="hero-slide active"
-            style="background-image: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1920&q=80');">
+            style="background-image: url('{{ asset('assets/uploads/content/why-join/'.$content->hero_image) }}?w=1920&q=80');">
         </div>
     </div>
 
@@ -13,15 +14,16 @@
 
     <div class="hero-content">
         <div class="hero-badge fade-in-up">
-            Why Join IYMUN
+            {{ $content->getTranslation('hero_title',app()->getLocale()) }}
         </div>
 
         <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
-            Why Join <span class="gradient-text"> IYMUN 2026? </span>
+            {{ $content->getTranslation('hero_sub_title',app()->getLocale()) }} <span class="gradient-text"> {{
+                $content->getTranslation('hero_color_title',app()->getLocale()) }} </span>
         </h1>
 
         <p class="hero-subtitle fade-in-up" style="max-width: 900px; margin: 0 auto;">
-            Transform your future through diplomacy, leadership, and global connections
+            {{ $content->getTranslation('hero_description',app()->getLocale()) }}
         </p>
     </div>
 
@@ -34,9 +36,10 @@
 <section class="section">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title" data-aos="fade-up">10 Reasons to Join IYMUN 2026</h2>
+            <h2 class="section-title" data-aos="fade-up"> {{ $content->getTranslation('reason_title',app()->getLocale())
+                }} </h2>
             <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                Transform your future with unmatched opportunities
+                {{ $content->getTranslation('reason_desc',app()->getLocale()) }}
             </p>
         </div>
 
@@ -50,11 +53,9 @@
                         <span style="font-size: 3rem;">🏛️</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">1. Visit UN Headquarters</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">{{ $content->getTranslation('reason_title1',app()->getLocale()) }}</h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            <strong>Exclusive guided tour</strong> of the United Nations headquarters in New York City.
-                            Walk the halls where world leaders make history, see the General Assembly Hall, and
-                            understand how global diplomacy works firsthand.
+                            {{ $content->getTranslation('reason_desc1',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -69,11 +70,9 @@
                         <span style="font-size: 3rem;">🌍</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">2. Global Network</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">{{ $content->getTranslation('reason_title2',app()->getLocale()) }}</h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            Connect with <strong>2,000+ delegates from 50+ countries</strong>. Build lifelong
-                            friendships, create international partnerships, and join a network of future global leaders
-                            across all continents.
+                            {{ $content->getTranslation('reason_desc2',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -88,11 +87,9 @@
                         <span style="font-size: 3rem;">🎓</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">3. Learn from Real Diplomats</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">{{ $content->getTranslation('reason_title3',app()->getLocale()) }}</h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            <strong>Keynote speeches and mentorship</strong> from current and former American diplomats
-                            and UN officials. Get insider perspectives on international relations and career advice from
-                            the best.
+                            {{ $content->getTranslation('reason_desc3',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -107,11 +104,9 @@
                         <span style="font-size: 3rem;">💼</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">4. Career-Boosting Skills</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('reason_title4',app()->getLocale()) }} </h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            Master <strong>public speaking, negotiation, critical thinking, and
-                                leadership</strong>—skills that universities and employers actively seek. Stand out in
-                            applications and interviews.
+                            {{ $content->getTranslation('reason_desc4',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -126,10 +121,9 @@
                         <span style="font-size: 3rem;">📜</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">5. Official Certification</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('reason_title5',app()->getLocale()) }} </h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            Receive <strong>internationally recognized certificates</strong> from IYMUN and American
-                            Diplomats. Enhance your CV/resume and university applications with prestigious credentials.
+                            {{ $content->getTranslation('reason_desc5',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -144,10 +138,9 @@
                         <span style="font-size: 3rem;">🗽</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">6. New York City Experience</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('reason_title6',app()->getLocale()) }} </h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            Explore <strong>the world's most iconic city</strong>—from Times Square to Central Park,
-                            Wall Street to Broadway. Network in the global capital of finance, culture, and diplomacy.
+                            {{ $content->getTranslation('reason_desc6',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -162,10 +155,9 @@
                         <span style="font-size: 3rem;">🏆</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">7. Awards & Recognition</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('reason_title7',app()->getLocale()) }} </h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            Compete for <strong>Best Delegate, Outstanding Delegate</strong>, and other prestigious
-                            awards. Recognition that strengthens college applications and professional profiles.
+                            {{ $content->getTranslation('reason_desc7',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -180,10 +172,9 @@
                         <span style="font-size: 3rem;">🎯</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">8. Real-World Topics</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('reason_title8',app()->getLocale()) }} </h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            Debate <strong>actual global challenges</strong>—violent extremism prevention and
-                            post-conflict peacebuilding. Work on solutions that matter to millions of lives worldwide.
+                            {{ $content->getTranslation('reason_desc8',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -198,10 +189,9 @@
                         <span style="font-size: 3rem;">🎉</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">9. Cultural & Social Events</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('reason_title9',app()->getLocale()) }} </h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            Enjoy <strong>networking dinners, cultural nights, and social events</strong>. Experience
-                            diverse cultures, make friends, and create memories that last a lifetime.
+                            {{ $content->getTranslation('reason_desc9',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -216,10 +206,9 @@
                         <span style="font-size: 3rem;">🚀</span>
                     </div>
                     <div>
-                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);">10. Alumni Network</h3>
+                        <h3 class="fw-bold mb-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('reason_title10',app()->getLocale()) }} </h3>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--gray);">
-                            Join <strong>10,000+ IYMUN alumni worldwide</strong>—a powerful network spanning
-                            universities, governments, NGOs, and international organizations across the globe.
+                            {{ $content->getTranslation('reason_desc10',app()->getLocale()) }}
                         </p>
                     </div>
                 </div>
@@ -233,10 +222,10 @@
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="display-4 fw-bold text-white mb-3" data-aos="fade-up">
-                What Our Delegates Say 💬
+                {{ $content->getTranslation('test_title',app()->getLocale()) }}
             </h2>
             <p class="lead text-white" style="opacity: 0.9;" data-aos="fade-up" data-aos-delay="100">
-                Hear from past participants who transformed their lives at IYMUN
+                {{ $content->getTranslation('test_desc',app()->getLocale()) }}
             </p>
         </div>
 
@@ -248,8 +237,7 @@
                         <i class="fas fa-quote-left" style="font-size: 2rem; color: #FFD700;"></i>
                     </div>
                     <p class="text-white mb-4" style="font-size: 1.05rem; line-height: 1.8;">
-                        "IYMUN changed my life! The UN tour was incredible, and the connections I made helped me get
-                        into my dream university. The skills I learned are invaluable."
+                        {{ $content->getTranslation('testmon_desc1',app()->getLocale()) }}
                     </p>
                     <div class="d-flex align-items-center">
                         <div
@@ -257,8 +245,7 @@
                             <span style="font-size: 1.5rem; color: white;">👩</span>
                         </div>
                         <div>
-                            <div class="text-white fw-bold">Sarah M.</div>
-                            <div class="text-white" style="opacity: 0.8; font-size: 0.9rem;">Kenya • IYMUN 2024</div>
+                            <div class="text-white fw-bold"> {{ $content->getTranslation('testmon_name1',app()->getLocale()) }} </div>
                         </div>
                     </div>
                 </div>
@@ -271,8 +258,7 @@
                         <i class="fas fa-quote-left" style="font-size: 2rem; color: #FFD700;"></i>
                     </div>
                     <p class="text-white mb-4" style="font-size: 1.05rem; line-height: 1.8;">
-                        "The mentorship from American diplomats was phenomenal. I learned more in 3 days than months of
-                        classroom study. Highly recommend to anyone serious about international relations!"
+                        {{ $content->getTranslation('testmon_desc2',app()->getLocale()) }}
                     </p>
                     <div class="d-flex align-items-center">
                         <div
@@ -280,8 +266,7 @@
                             <span style="font-size: 1.5rem; color: white;">🧑</span>
                         </div>
                         <div>
-                            <div class="text-white fw-bold">Ahmed R.</div>
-                            <div class="text-white" style="opacity: 0.8; font-size: 0.9rem;">Egypt • IYMUN 2025</div>
+                            <div class="text-white fw-bold"> {{ $content->getTranslation('testmon_name3',app()->getLocale()) }} </div>
                         </div>
                     </div>
                 </div>
@@ -294,8 +279,7 @@
                         <i class="fas fa-quote-left" style="font-size: 2rem; color: #FFD700;"></i>
                     </div>
                     <p class="text-white mb-4" style="font-size: 1.05rem; line-height: 1.8;">
-                        "Best investment I've ever made! Won Best Delegate award, made friends from 20+ countries, and
-                        the certificate helped me land an internship at the UN. Thank you IYMUN!"
+                        {{ $content->getTranslation('testmon_desc3',app()->getLocale()) }}
                     </p>
                     <div class="d-flex align-items-center">
                         <div
@@ -303,8 +287,7 @@
                             <span style="font-size: 1.5rem; color: white;">👨</span>
                         </div>
                         <div>
-                            <div class="text-white fw-bold">Carlos D.</div>
-                            <div class="text-white" style="opacity: 0.8; font-size: 0.9rem;">Brazil • IYMUN 2024</div>
+                            <div class="text-white fw-bold"> {{ $content->getTranslation('testmon_name3',app()->getLocale()) }} </div>
                         </div>
                     </div>
                 </div>
@@ -319,9 +302,9 @@
 <section class="section section-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title" data-aos="fade-up"> Career & Academic Impact </h2>
+            <h2 class="section-title" data-aos="fade-up">  {{ $content->getTranslation('career_title',app()->getLocale()) }} </h2>
             <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                IYADMUN participation opens doors to prestigious opportunities
+               {{ $content->getTranslation('career_desc',app()->getLocale()) }}
             </p>
         </div>
 
@@ -330,20 +313,15 @@
                 <div class="card-custom h-100" style="border: 3px solid #10B981;">
                     <div class="mb-2">
                         <div style="font-size: 5rem;"> 🎓 </div>
-                        <h3 class="fw-bold mt-3" style="color: var(--un-blue-dark);"> University Applications </h3>
+                        <h3 class="fw-bold mt-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('university_title',app()->getLocale()) }} </h3>
                     </div>
 
                     <ul class="list-unstyled mb-4" style="font-size: 1.1rem; line-height: 2;">
-                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i> Stand out in competitive
-                                admissions processes </li>
-                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i> Demonstrate leadership and
-                                global awareness </li>
-                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i>
-                                Showcase international experience </li>
-                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i>
-                                Strengthen personal statements and essays </li>
-                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i> Gain recommendation letter
-                                material </li>
+                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i> {{ $content->getTranslation('university_title_point1',app()->getLocale()) }} </li>
+                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i> {{ $content->getTranslation('university_title_point2',app()->getLocale()) }} </li>
+                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i> {{ $content->getTranslation('university_title_point3',app()->getLocale()) }} </li>
+                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i> {{ $content->getTranslation('university_title_point4',app()->getLocale()) }} </li>
+                        <li><i class="fas fa-star me-2" style="color: #FFD700;"></i> {{ $content->getTranslation('university_title_point5',app()->getLocale()) }} </li>
                     </ul>
                 </div>
             </div>
@@ -352,15 +330,15 @@
                 <div class="card-custom h-100" style="border: 3px solid #4A90E2;">
                     <div class="mb-2">
                         <div style="font-size: 5rem;"> 💼 </div>
-                        <h3 class="fw-bold mt-3" style="color: var(--un-blue-dark);"> Career Opportunities </h3>
+                        <h3 class="fw-bold mt-3" style="color: var(--un-blue-dark);"> {{ $content->getTranslation('career_title2',app()->getLocale()) }} </h3>
                     </div>
 
                     <ul class="list-unstyled mb-4" style="font-size: 1.1rem; line-height: 2;">
-                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> Build skills for international organizations </li>
-                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> Develop diplomatic and negotiation expertise </li>
-                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> Create a global professional network </li>
-                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> Enhance CV with prestigious experience </li>
-                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> Prepare for careers in diplomacy, law, and policy </li>
+                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> {{ $content->getTranslation('university_title_point1',app()->getLocale()) }} </li>
+                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i>  {{ $content->getTranslation('university_title_point2',app()->getLocale()) }} </li>
+                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> {{ $content->getTranslation('university_title_point3',app()->getLocale()) }} </li>
+                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> {{ $content->getTranslation('university_title_point4',app()->getLocale()) }} </li>
+                        <li><i class="fas fa-heart me-2" style="color: #EF4444;"></i> {{ $content->getTranslation('university_title_point5',app()->getLocale()) }} </li>
                     </ul>
                 </div>
             </div>

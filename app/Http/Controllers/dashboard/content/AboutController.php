@@ -4,55 +4,45 @@ namespace App\Http\Controllers\dashboard\content;
 
 use App\Http\Controllers\Controller;
 use App\Http\Traits\Message_Trait;
+use App\Models\dashboard\AboutPage;
 use App\Http\Traits\Upload_Images;
-use App\Models\dashboard\homePage;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AboutController extends Controller
 {
     use Message_Trait;
     use Upload_Images;
+
     public function index()
     {
-        $content = null;
-        $content = homePage::first();
-        return view('dashboard.content.home', compact('content'));
+        $content = AboutPage::first();
+        return view('dashboard.content.about', compact('content'));
     }
 
     public function update(Request $request)
     {
-        $content = homePage::firstOrFail();
+        $content = AboutPage::first();
 
-        $path = public_path('assets/uploads/content/home');
-        $imageFields = ['hero_img1', 'hero_img2', 'hero_img3'];
+        $path = public_path('assets/uploads/content/about');
+        $imageFields = ['about_image'];
 
-        // بيانات التحديث النهائية
         $updateData = $request->except(['_token', '_method']);
 
         foreach ($imageFields as $field) {
             if ($request->hasFile($field)) {
-                // احصل على الصورة القديمة
                 $oldImage = $content->{$field};
-
-                // احفظ الجديدة وخد الاسم
                 $newImageName = $this->saveImage($request->file($field), $path);
-
-                // ضع الاسم الجديد في البيانات (مهم: string مش object)
                 $updateData[$field] = $newImageName;
 
-                // امسح القديمة
                 if ($oldImage && file_exists($path . '/' . $oldImage)) {
                     @unlink($path . '/' . $oldImage);
                 }
             } else {
-                // لو مفيش ملف جديد، احتفظ بالقديم
                 $updateData[$field] = $content->{$field};
             }
         }
 
-        // دلوقتي حدّث يدويًا بدون $request->all()
         $content->update($updateData);
-
-        return $this->success_message('تم التعديل بنجاح');
+        return $this->success_message(' تم تعديل البيانات بنجاح  ');
     }
 }
