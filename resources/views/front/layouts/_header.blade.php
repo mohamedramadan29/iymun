@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  @yield('title') </title>
-    <meta name="description" content="Join the premier youth diplomacy conference in New York City. IYMUN & American Diplomats MUN - October 2026">
+    <meta name="description" content="Join the premier youth diplomacy conference in New York City. IYADMUN & American Diplomats MUN - October 2026">
 
     <link rel="icon" type="image/png" href="{{ asset('assets/front/images/logo.webp') }}">
     <!-- Bootstrap 5 -->

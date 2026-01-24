@@ -82,7 +82,7 @@
         </div>
         <div class="email-body">
             <h2> Hello ! {{ $name }}</h2>
-            <p> {{ $message }} </p>
+            <p> {{ $message_content }} </p>
         </div>
         <div class="email-footer">
             © 2026 IYMUN & American Diplomats MUN. All rights reserved.

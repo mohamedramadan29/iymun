@@ -46,9 +46,9 @@ class UsersController extends Controller
             'email' => $user['email'],
             'status' => $data['status'],
         ];
-        // Mail::send('front.mails.SendApplicationStatusMail', $MessageDate, function ($message) use ($email) {
-        //     $message->to($email)->subject(' Send Application Status  ');
-        // });
+        Mail::send('front.mails.SendApplicationStatusMail', $MessageDate, function ($message) use ($email) {
+            $message->to($email)->subject(' Send Application Status  ');
+        });
         ############ And Send Payment Link In Mail ############ ####################
 
         return $this->success_message('تم تغير حالة المستخدم بنجاح');
@@ -66,10 +66,10 @@ class UsersController extends Controller
     }
 
 
-     public function create($id)
+    public function create($id)
     {
-        $user = User::where('id',$id)->first();
-        return view('dashboard.users.create_mail',compact('user'));
+        $user = User::where('id', $id)->first();
+        return view('dashboard.users.create_mail', compact('user'));
     }
 
     public function send(Request $request)
@@ -111,7 +111,7 @@ class UsersController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'subject' => $data['subject'],
-            'message' => $data['message'],
+            'message_content' => $data['message'],
         ];
         Mail::send('front.mails.sendMailFromAdmin', $MessageDate, function ($message) use ($data, $email) {
             $message->to($email)->subject($data['subject']);

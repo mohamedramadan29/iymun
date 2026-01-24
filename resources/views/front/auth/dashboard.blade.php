@@ -460,7 +460,7 @@
         <div class="col-lg-4">
 
             <!-- Registration Details -->
-            <div class="card-custom">
+            {{-- <div class="card-custom">
                 <div class="card-header-custom">
                     <h3 class="card-title">
                         <i class="fas fa-info-circle me-2"></i>
@@ -497,7 +497,7 @@
                     <span class="info-label">Amount</span>
                     <span class="info-value" style="color: var(--success); font-size: 1.3rem;">$950</span>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Quick Actions -->
             <div class="card-custom">

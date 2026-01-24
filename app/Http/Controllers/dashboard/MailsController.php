@@ -62,7 +62,7 @@ class MailsController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'subject' => $data['subject'],
-            'message' => $data['message'],
+            'message_content' => $data['message'],
         ];
         Mail::send('front.mails.sendMailFromAdmin', $MessageDate, function ($message) use ($data, $email) {
             $message->to($email)->subject($data['subject']);

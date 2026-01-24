@@ -92,8 +92,6 @@
             </p>
             @endif
             <p> Payment Now To Complete Your Registration </p>
-            <p>{{ url('user/confirm/' . $code) }}</p>
-            <p> Thanks for joining us! </p>
         </div>
         <div class="email-footer">
             © 2026 IYMUN & American Diplomats MUN. All rights reserved.
