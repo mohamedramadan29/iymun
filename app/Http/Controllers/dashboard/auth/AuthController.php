@@ -49,7 +49,7 @@ class AuthController extends Controller
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
             }
-            if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->has('remember'))) {
+            if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->has('remember') ? $request->input('') : null)) {
                 // return redirect()->route('dashboard.welcome')->with('success','تم تسجيل الدخول بنجاح ');
                 ////// intebded = > بيرجعك علي اخر حاجة كنت شغال عليها بعد التسجيل مرة اخري
                 return redirect()->intended(route('dashboard.welcome'));

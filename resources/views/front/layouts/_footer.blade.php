@@ -43,7 +43,7 @@
             <div class="col-lg-4">
                 <h3 class="footer-title">
                     <i class="fas fa-globe-americas me-2"></i>
-                    IYMUN 2026
+                    IYADMUN 2026
                 </h3>
                 <p style="opacity: 0.9; line-height: 1.8;">
                     International Youth Diplomacy Conference bringing together future leaders from around the world.
@@ -59,20 +59,20 @@
             <div class="col-lg-2 col-md-4">
                 <h5 class="footer-title">Quick Links</h5>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="committees.html">Committees</a></li>
-                    <li><a href="why-us.html">Why Join</a></li>
+                    <li><a href="{{ route('front.index') }}">Home</a></li>
+                    <li><a href="{{ route('front.about') }}">About</a></li>
+                    <li><a href="{{ route('front.committees') }}">Committees</a></li>
+                    <li><a href="{{ route('front.why-us') }}">Why Join</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-2 col-md-4">
                 <h5 class="footer-title">Resources</h5>
                 <ul class="footer-links">
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="venue.html">Venue</a></li>
-                    <li><a href="partners.html">Partners</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="{{ route('front.pricing') }}">Pricing</a></li>
+                    <li><a href="{{ route('front.venue') }}">Venue</a></li>
+                    <li><a href="{{ route('front.partners') }}">Partners</a></li>
+                    <li><a href="{{ route('front.faq') }}">FAQ</a></li>
                 </ul>
             </div>
 
@@ -90,7 +90,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p class="mb-0">&copy; 2026 IYMUN & American Diplomats MUN. All rights reserved.</p>
+            <p class="mb-0">&copy; 2026 Iraqi Youth & American Diplomats MUN 2026. All rights reserved.</p>
         </div>
     </div>
 </footer>

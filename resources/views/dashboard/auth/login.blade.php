@@ -55,7 +55,7 @@
                                                 <div class="text-center col-md-6 col-12 text-md-left">
                                                     <fieldset>
                                                         <input name="remember" type="checkbox" id="remember-me"
-                                                            class="chk-remember">
+                                                            class="chk-remember" >
                                                         <label for="remember-me">  تذكرني  </label>
                                                     </fieldset>
                                                 </div>

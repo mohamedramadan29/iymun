@@ -93,11 +93,11 @@
         </div>
 
         <div class="hero-buttons fade-in-up">
-            <a href="registration.html" class="btn-primary-custom">
+            <a href="{{ route('front.register') }}" class="btn-primary-custom">
                 Register Now
                 <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="pricing.html" class="btn-secondary-custom">
+            <a href="{{ route('front.pricing') }}" class="btn-secondary-custom">
                 View Packages
                 <i class="fas fa-ticket-alt"></i>
             </a>

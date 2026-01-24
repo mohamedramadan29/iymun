@@ -4,7 +4,7 @@
         <a class="navbar-brand" href="{{ route('front.index') }}">
             <img width="60px" src="{{ asset('assets/front/images/logo.webp') }}"
                 alt="IYADMUN 2026 | International Youth Diplomacy Conference - New York">
-            <span>IYADMUN & American Diplomats
+            <span> Iraqi Youth & American Diplomats MUN
                 <br>
                 <span style="color: #E3B106;font-size:12px"> NEW YORK 2026 </span>
             </span>

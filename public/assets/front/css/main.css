@@ -65,7 +65,7 @@ body {
 }
 
 .navbar-brand {
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 900;
     color: var(--un-blue) !important;
     display: flex;
@@ -95,7 +95,7 @@ body {
     background: rgba(10, 114, 181, 0.1);
 }
 
-.navbar-nav{
+.navbar-nav {
     align-items: center;
 }
 
@@ -764,9 +764,10 @@ form .form-select {
 
 .dashboard_page {}
 
-.call_to_action .content{
-    padding:5rem;
+.call_to_action .content {
+    padding: 5rem;
 }
+
 /* ########################### Start Responsive Design #################
 ############
 ##############
@@ -774,7 +775,7 @@ form .form-select {
 
 @media(max-width:991px) {
     .navbar-brand {
-        font-size: .8rem;
+        font-size: .6rem;
     }
 
     .navbar-custom {
@@ -823,22 +824,28 @@ form .form-select {
         padding: .6rem 1rem;
         font-size: .8rem;
     }
-    .navbar-nav{
+
+    .navbar-nav {
         align-items: normal;
     }
-    .call_to_action .content{
-        padding:1rem;
-    }
-    .card-custom{
+
+    .call_to_action .content {
         padding: 1rem;
     }
-    .pricing-card-ultimate{
+
+    .card-custom {
         padding: 1rem;
     }
-    .coming-soon-box{
+
+    .pricing-card-ultimate {
+        padding: 1rem;
+    }
+
+    .coming-soon-box {
         padding: 2rem 1rem;
     }
-    .contact-box{
+
+    .contact-box {
         padding: 1rem;
     }
 }

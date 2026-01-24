@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content=" بصمة الاهتمام للاتصالات  ">
-    <meta name="keywords" content=" بصمة الاهتمام للاتصالات ">
+    <meta name="description" content=" IYADMUN dashboard  ">
+    <meta name="keywords" content=" IYADMUN dashboard ">
     <meta name="author" content="Mohamed Ramadan +201011642731">
     <title> الرئيسية | @yield('title')
     </title>
@@ -51,7 +51,7 @@
                         <a class="navbar-brand" href="#">
                             <img class="brand-logo" alt="modern admin logo"
                                 src="{{ asset('assets/front/images/logo.webp') }}">
-                            <h3 class="brand-text">  IYMUN dashboard </h3>
+                            <h3 class="brand-text">  IYADMUN dashboard </h3>
                         </a>
                     </li>
                     <li class="nav-item d-md-none">
