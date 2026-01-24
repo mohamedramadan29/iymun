@@ -3,8 +3,8 @@
     <div class="container">
         <a class="navbar-brand" href="{{ route('front.index') }}">
             <img width="60px" src="{{ asset('assets/front/images/logo.webp') }}"
-                alt="IYMUN 2026 | International Youth Diplomacy Conference - New York">
-            <span>IYMUN & American Diplomats
+                alt="IYADMUN 2026 | International Youth Diplomacy Conference - New York">
+            <span>IYADMUN & American Diplomats
                 <br>
                 <span style="color: #E3B106;font-size:12px"> NEW YORK 2026 </span>
             </span>
@@ -15,7 +15,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-center">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link {{ request()->is('*/') ? 'active' : '' }}"
                         href="{{ route('front.index') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->is('*/about') ? 'active' : '' }}"
@@ -39,12 +39,15 @@
                     <a href="{{ route('user.dashboard') }}" class="btn-register-nav"> Dashboard </a>
                 </li>
                 @else
-                <li class="nav-item ms-lg-2">
-                    <a href="{{ route('front.register') }}" class="btn-register-nav">Register</a>
-                </li>
-                <li class="nav-item ms-lg-2">
-                    <a href="{{ route('front.login') }}" class="btn-register-nav">login</a>
-                </li>
+
+                <div class="d-flex">
+                    <li class="nav-item ms-lg-2">
+                        <a href="{{ route('front.register') }}" class="btn-register-nav">Register</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="{{ route('front.login') }}" class="btn-register-nav">login</a>
+                    </li>
+                </div>
                 @endif
             </ul>
         </div>

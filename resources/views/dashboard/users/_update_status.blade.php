@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel2">
-                    <i class="la la-road2"></i> تعديل حالة الطلب
+                    <i class="la la-road2"></i> Update Application Status
                 </h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group">
                         <select name="status" class="form-control">
-                            <option value="" selected> -- تغير حالة الطلب -- </option>
+                            <option value="" selected> -- Change Application Status -- </option>
                             <option @selected($user->application_status_from_admin == 'pending') value="pending"> pending </option>
                             <option @selected($user->application_status_from_admin == 'approved') value="approved"> approved </option>
                             <option @selected($user->application_status_from_admin == 'rejected') value="rejected"> rejected </option>
@@ -28,10 +28,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary btn-sm">
-                        تعديل حالة الطلب
+                        Update Application Status
                     </button>
                     <button type="button" class="btn grey btn-outline-secondary btn-sm" data-dismiss="modal">
-                        رجوع
+                        Close
                     </button>
                 </div>
             </form>

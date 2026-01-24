@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', 'Partners & Sponsors | IYMUN 2026')
+@section('title', 'Partners & Sponsors | IYADMUN 2026')
 @section('css')
 @endsection
 
@@ -19,7 +19,7 @@
                 Our Partners & Sponsors
             </div>
 
-            <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+            <h1 class="hero-title fade-in-up">
                 Organizers
                 <span class="gradient-text">& Partners</span>
             </h1>
@@ -45,7 +45,7 @@
             </div>
 
             <div class="row g-5">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-custom h-100 text-center" style="border: 3px solid #FFD700;">
                         <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #4A90E2, #0A72B5); border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 15px 40px rgba(74, 144, 226, 0.3);">
                             <i class="fas fa-flag-usa" style="font-size: 4rem; color: white;"></i>
@@ -55,7 +55,7 @@
                         <p class="lead mb-4" style="color: var(--gray);">Co-Organizing Partner</p>
 
                         <p style="font-size: 1.1rem; line-height: 1.9; color: var(--gray); text-align: left;">
-                            <strong>American Diplomats</strong> is our founding partner, bringing decades of real-world diplomatic experience to IYMUN. Current and former U.S. diplomats provide mentorship, deliver keynote speeches, and offer insider perspectives on international relations.
+                            <strong>American Diplomats</strong> is our founding partner, bringing decades of real-world diplomatic experience to IYADMUN. Current and former U.S. diplomats provide mentorship, deliver keynote speeches, and offer insider perspectives on international relations.
                         </p>
 
                         <div class="mt-4 p-4 rounded-4" style="background: rgba(74, 144, 226, 0.1); text-align: left;">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-custom h-100 text-center" style="border: 3px solid #FFD700;">
                         <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #10B981, #34D399); border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: 0 15px 40px rgba(16, 185, 129, 0.3);">
                             <i class="fas fa-globe" style="font-size: 4rem; color: white;"></i>
@@ -80,7 +80,7 @@
                         <p class="lead mb-4" style="color: var(--gray);">Conference Organizer</p>
 
                         <p style="font-size: 1.1rem; line-height: 1.9; color: var(--gray); text-align: left;">
-                            <strong>IYMUN</strong> has been organizing world-class youth diplomacy conferences since 2019. With 7 successful editions and 10,000+ alumni worldwide, we've established ourselves as a leading platform for youth engagement in global affairs.
+                            <strong>IYADMUN</strong> has been organizing world-class youth diplomacy conferences since 2019. With 7 successful editions and 10,000+ alumni worldwide, we've established ourselves as a leading platform for youth engagement in global affairs.
                         </p>
 
                         <div class="mt-4 p-4 rounded-4" style="background: rgba(16, 185, 129, 0.1); text-align: left;">
@@ -280,7 +280,7 @@
                     <div class="card-custom h-100">
                         <i class="fas fa-quote-left mb-3" style="font-size: 2rem; color: #FFD700;"></i>
                         <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray); margin-bottom: 2rem;">
-                            "Partnering with IYMUN has been incredibly rewarding. The delegates' dedication to peacebuilding is inspiring, and we're proud to support the next generation of diplomats."
+                            "Partnering with IYADMUN has been incredibly rewarding. The delegates' dedication to peacebuilding is inspiring, and we're proud to support the next generation of diplomats."
                         </p>
                         <div class="d-flex align-items-center">
                             <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4A90E2, #0A72B5); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
@@ -298,7 +298,7 @@
                     <div class="card-custom h-100">
                         <i class="fas fa-quote-left mb-3" style="font-size: 2rem; color: #FFD700;"></i>
                         <p style="font-size: 1.05rem; line-height: 1.8; color: var(--gray); margin-bottom: 2rem;">
-                            "IYMUN delivers exceptional quality. The level of preparation, professionalism, and impact is unmatched in youth diplomacy conferences. Highly recommend partnering!"
+                            "IYADMUN delivers exceptional quality. The level of preparation, professionalism, and impact is unmatched in youth diplomacy conferences. Highly recommend partnering!"
                         </p>
                         <div class="d-flex align-items-center">
                             <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10B981, #34D399); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">

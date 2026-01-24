@@ -1,23 +1,22 @@
 @extends('dashboard.layouts.app')
 
-@section('title', ' اضافة خطة جديدة ')
+@section('title', ' Add New Plan ')
 
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> اضافة خطة جديدة </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> Add New Plan </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">Home </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.packages.index') }}"> الخطط
-                                    والاسعار
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.packages.index') }}"> Plans & Pricing
                                 </a>
                             </li>
-                            <li class="breadcrumb-item active"><a href="#"> اضافة خطة جديدة </a>
+                            <li class="breadcrumb-item active"><a href="#"> Add New Plan </a>
                             </li>
                         </ol>
                     </div>
@@ -32,7 +31,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> اضافة خطة جديدة </h4>
+                                <h4 class="card-title" id="basic-layout-form"> Add New Plan </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             </div>
                             <div class="card-content collapse show">
@@ -43,14 +42,14 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> العنوان (ar) </label>
+                                                        <label> Title (ar) </label>
                                                         <input type="text" class="form-control" name="title[ar]"
                                                             required value="{{ old('title[ar]')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> العنوان (en) </label>
+                                                        <label> Title (en) </label>
                                                         <input type="text" class="form-control" name="title[en]"
                                                             required value="{{ old('title[en]') }}">
                                                     </div>
@@ -59,21 +58,21 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label> السعر </label>
+                                                        <label> Price </label>
                                                         <input type="number" class="form-control" name="price" required
                                                             value="{{ old('price')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label> من تاريخ </label>
+                                                        <label> From Date </label>
                                                         <input type="date" class="form-control" name="from_date"
                                                             required value="{{ old('from_date') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label> إلى تاريخ </label>
+                                                        <label> To Date </label>
                                                         <input type="date" class="form-control" name="to_date" required
                                                             value="{{ old('to_date') }}">
                                                     </div>
@@ -83,14 +82,14 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> slogan (ar) </label>
+                                                        <label> Slogan (ar) </label>
                                                         <input type="text" class="form-control" name="slogan[ar]"
                                                             required value="{{ old('slogan[ar]')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> slogan (en) </label>
+                                                        <label> Slogan (en) </label>
                                                         <input type="text" class="form-control" name="slogan[en]"
                                                             required value="{{ old('slogan[en]') }}">
                                                     </div>
@@ -100,7 +99,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> المميزات (ar) </label>
+                                                        <label> Features (ar) </label>
                                                         <textarea name="features[ar]" id="" class="form-control"
                                                             required>{{ old('features[ar]') }}</textarea>
 
@@ -108,7 +107,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> المميزات (en) </label>
+                                                        <label> Features (en) </label>
                                                         <textarea name="features[en]" id="" class="form-control"
                                                             required>{{ old('features[en]') }}</textarea>
 
@@ -119,7 +118,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> اللون  </label>
+                                                        <label> Color  </label>
                                                         <input type="color" class="form-control" name="color"
                                                             required value="{{ old('color') }}">
                                                     </div>
@@ -131,7 +130,7 @@
                                         </div>
                                         <div class="form-actions">
                                             <button type="submit" class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> حفظ
+                                                <i class="la la-check-square-o"></i> Save
                                             </button>
 
                                         </div>

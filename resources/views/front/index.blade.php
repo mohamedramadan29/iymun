@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 
-@section('title','IYMUN 2026 | International Youth Diplomacy Conference - New York')
+
+@section('title','IYADMUN 2026 | International Youth Diplomacy Conference - New York')
 @section('content')
 <!-- ==================== HERO SECTION ==================== -->
 <div class="hero-wrapper">
@@ -55,7 +56,7 @@
         }
                 ?>
             {!! !empty($firstPart) ? $firstPart : '' !!}
-            <br>
+            {{-- <br> --}}
             {{ $lastWord1 }} <span class="gradient-text">{{ $lastWord2 }} {{ $lastWord3 }}</span>
 
         </h1>
@@ -67,6 +68,28 @@
         <div class="hero-location fade-in-up">
             <span> {{ $content->getTranslation('hero_city',app()->getLocale()) }} </span>
             <span> {{ $content->getTranslation('hero_date',app()->getLocale()) }} </span>
+        </div>
+
+        <div class="hero-countdown fade-in-up" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Seconds</span>
+            </div>
         </div>
 
         <div class="hero-buttons fade-in-up">
@@ -82,9 +105,9 @@
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
+    {{-- <div class="scroll-indicator">
         <i class="fas fa-chevron-down"></i>
-    </div>
+    </div> --}}
 </div>
 
 <!-- ==================== HIGHLIGHTS SECTION ==================== -->
@@ -171,7 +194,7 @@
     <div class="parallax-overlay"></div>
     <div class="container parallax-content">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0 text-white" data-aos="fade-right">
+            <div class="col-lg-6 mb-4 mb-lg-0 text-white" data-aos="fade-up">
                 <h2 class="display-3 fw-bold mb-4"> {{ $content->getTranslation('why_title',app()->getLocale()) }} </h2>
                 <p class="lead mb-4" style="font-size: 1.4rem;">
                     {{ $content->getTranslation('why_p',app()->getLocale()) }}
@@ -219,8 +242,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-left">
-                <div class="text-center text-white p-5 rounded-4"
+            <div class="col-lg-6" data-aos="fade-up">
+                <div class="text-center text-white p-2 rounded-4"
                     style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
                     <div style="font-size: 8rem; margin-bottom: 1rem;">🗽</div>
                     <h3 class="display-5 fw-bold mb-3"> {{ $content->getTranslation('why_main_title',app()->getLocale())
@@ -245,33 +268,29 @@
         <div class="row g-4 text-center">
             <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
                 <div class="stats-card">
-                    <div class="counter" data-target="50">0</div>
-                    <h5>Countries</h5>
-                    <p style="opacity: 0.8; margin: 0;">Represented</p>
+                    <div class="counter" data-target="{{ $content->number1 }}">{{ $content->number1 }}</div>
+                    <h5>{{ $content->getTranslation('number1_title',app()->getLocale()) }}</h5>
                 </div>
             </div>
 
             <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
                 <div class="stats-card">
-                    <div class="counter" data-target="2000">0</div>
-                    <h5>Delegates</h5>
-                    <p style="opacity: 0.8; margin: 0;">Expected</p>
+                    <div class="counter" data-target="{{ $content->number2 }}">{{ $content->number2 }}</div>
+                    <h5>{{ $content->getTranslation('number2_title',app()->getLocale()) }}</h5>
                 </div>
             </div>
 
             <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
                 <div class="stats-card">
-                    <div class="counter" data-target="2">0</div>
-                    <h5>Committees</h5>
-                    <p style="opacity: 0.8; margin: 0;">UNGA & PBC</p>
+                    <div class="counter" data-target="{{ $content->number3 }}">{{ $content->number3 }}</div>
+                    <h5>{{ $content->getTranslation('number3_title',app()->getLocale()) }}</h5>
                 </div>
             </div>
 
             <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="500">
                 <div class="stats-card">
-                    <div class="counter" data-target="3">0</div>
-                    <h5>Days</h5>
-                    <p style="opacity: 0.8; margin: 0;">Of Excellence</p>
+                    <div class="counter" data-target="{{ $content->number4 }}">{{ $content->number4 }}</div>
+                    <h5>{{ $content->getTranslation('number4_title',app()->getLocale()) }}</h5>
                 </div>
             </div>
         </div>
@@ -279,4 +298,41 @@
 </section>
 
 
+@endsection
+
+@section('js')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set the date we're counting down to
+        const countDownDate = new Date("{{ $content->event_date }}").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            // Add padding with '0' for single digits
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = (days < 10 && days >= 0) ? "0" + days : days;
+            document.getElementById("hours").innerHTML = (hours < 10 && hours >= 0) ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = (minutes < 10 && minutes >= 0) ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = (seconds < 10 && seconds >= 0) ? "0" + seconds : seconds;
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<div class='text-white text-center h4 mb-0'>Conference Has Started!</div>";
+            }
+        }, 1000);
+    });
+</script>
 @endsection

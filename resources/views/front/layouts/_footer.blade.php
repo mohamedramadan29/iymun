@@ -4,7 +4,7 @@
 <section class="section section-light call_to_action">
     <div class="container">
         <div class="text-center" data-aos="zoom-in">
-            <div class="p-5 rounded-5" style="background: var(--gradient-dark); box-shadow: var(--shadow-xl);">
+            <div class="rounded-5 content" style="background: var(--gradient-dark); box-shadow: var(--shadow-xl);">
                 <h2 class="display-3 fw-bold text-white mb-4">
                     Ready to Shape the Future 🚀
                 </h2>
@@ -160,6 +160,8 @@
             }
         });
 </script>
+
+@yield('js')
 
 @toastifyJs
 </body>

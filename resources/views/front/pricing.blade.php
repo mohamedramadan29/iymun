@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title','Pricing & Packages | IYMUN 2026 - Affordable Excellence')
+@section('title','Pricing & Packages | IYADMUN 2026 - Affordable Excellence')
 @section('css')
 
 <style>
@@ -360,7 +360,7 @@
             Investment in Your Future
         </div>
 
-        <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+        <h1 class="hero-title fade-in-up">
             Pricing <span class="gradient-text"> & Packages </span>
         </h1>
 
@@ -380,7 +380,7 @@
         <div class="text-center mb-5">
             <h2 class="section-title" data-aos="fade-up">Choose Your Package</h2>
             <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                All packages include UN HQ visit, certificates, and lifetime access to IYMUN alumni network
+                All packages include UN HQ visit, certificates, and lifetime access to IYADMUN alumni network
             </p>
         </div>
 
@@ -666,7 +666,7 @@
                 <div class="card-custom text-center h-100">
                     <div style="font-size: 4rem; margin-bottom: 1rem;"> 🔄 </div>
                     <h4 class="card-title"> Refund Policy </h4>
-                    <p class="card-text"> All fees paid for IYMUN New York 2026 registration are non-refundable. This
+                    <p class="card-text"> All fees paid for IYADMUN New York 2026 registration are non-refundable. This
                         includes all registration packages. See Terms & Conditions for full policy. </p>
                 </div>
             </div>
@@ -711,7 +711,7 @@
                         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
                             <div class="accordion-body" style="font-size: 1.05rem; line-height: 1.8;">
                                 Accommodation is <strong>not included</strong> but we provide a list of recommended
-                                hotels with special IYMUN rates. VIP package includes accommodation assistance.
+                                hotels with special IYADMUN rates. VIP package includes accommodation assistance.
                             </div>
                         </div>
                     </div>

@@ -4,16 +4,16 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="nav-item {{ Route::is('dashboard.welcome') ? 'active' : '' }}"><a
                     href="{{ route('dashboard.welcome') }}"><i class="la la-home"></i><span class="menu-title"
-                        data-i18n="nav.dash.main">الرئيسية</span></a>
+                        data-i18n="nav.dash.main">Home</span></a>
             </li>
             <li class="nav-item {{ Route::is('dashboard.users.*') ? 'active' : '' }}"><a href="#"><i
                         class="la la-file-text"></i><span class="menu-title" data-i18n="nav.users.main">
-                        ادارة الطلبات
+                        Orders Management
                     </span></a>
                 <ul class="menu-content">
                     <li class="{{ Route::is('dashboard.users.index') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.users.index') }}"
-                            data-i18n="nav.users.user_profile"> الطلبات والمستخدمين
+                            data-i18n="nav.users.user_profile"> Orders & Users
                         </a>
                     </li>
 
@@ -23,12 +23,12 @@
 
             <li class="nav-item {{ Route::is('dashboard.payments.*') ? 'active' : '' }}"><a href="#"><i
                         class="la la-credit-card"></i><span class="menu-title" data-i18n="nav.users.main">
-                        المدفوعات
+                        Payments
                     </span></a>
                 <ul class="menu-content">
                     <li class="{{ Route::is('dashboard.payments.index') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.payments.index') }}"
-                            data-i18n="nav.users.user_profile"> المدفوعات
+                            data-i18n="nav.users.user_profile"> Payments
                         </a>
                     </li>
 
@@ -38,12 +38,12 @@
 
             <li class="nav-item {{ Route::is('dashboard.mails.*') ? 'active' : '' }}"><a href="#"><i
                         class="la la-envelope"></i><span class="menu-title" data-i18n="nav.users.main">
-                        ادراة ارسال الايميلات
+                        Email Management
                     </span></a>
                 <ul class="menu-content">
                     <li class="{{ Route::is('dashboard.mails.index') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.mails.index') }}"
-                            data-i18n="nav.users.user_profile"> الايميلات
+                            data-i18n="nav.users.user_profile"> Emails
                         </a>
                     </li>
                 </ul>
@@ -51,12 +51,12 @@
 
             <li class="nav-item {{ Route::is('dashboard.packages.*') ? 'active' : '' }}"><a href="#"><i
                         class="la la-television"></i><span class="menu-title" data-i18n="nav.users.main">
-                        الخطط والاسعار
+                        Plans & Pricing
                     </span></a>
                 <ul class="menu-content">
                     <li class="{{ Route::is('dashboard.packages.index') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.packages.index') }}"
-                            data-i18n="nav.users.user_profile"> الخطط والاسعار
+                            data-i18n="nav.users.user_profile"> Plans & Pricing
                         </a>
                     </li>
                 </ul>
@@ -64,32 +64,32 @@
 
             <li class="nav-item {{ Route::is('dashboard.content.*') ? 'active' : '' }}"><a href="#"><i
                         class="la la-television"></i><span class="menu-title" data-i18n="nav.users.main">
-                        محتوي الصفحات
+                        Pages Content
                     </span></a>
                 <ul class="menu-content">
                     <li class="{{ Route::is('dashboard.content.home') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.content.home') }}"
-                            data-i18n="nav.users.user_profile"> الصفحة الرئيسية
+                            data-i18n="nav.users.user_profile"> Home Page
                         </a>
                     </li>
                     <li class="{{ Route::is('dashboard.content.about') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.content.about') }}"
-                            data-i18n="nav.users.user_profile"> من نحن
+                            data-i18n="nav.users.user_profile"> About Us
                         </a>
                     </li>
                     <li class="{{ Route::is('dashboard.content.committee') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.content.committee') }}"
-                            data-i18n="nav.users.user_profile"> اللجان
+                            data-i18n="nav.users.user_profile"> Committees
                         </a>
                     </li>
                     <li class="{{ Route::is('dashboard.content.why-join') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.content.why-join') }}"
-                            data-i18n="nav.users.user_profile"> لماذا تنضم الينا
+                            data-i18n="nav.users.user_profile"> Why Join Us
                         </a>
                     </li>
                     <li class="{{ Route::is('dashboard.content.venue') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.content.venue') }}"
-                            data-i18n="nav.users.user_profile"> المكان (Venue)
+                            data-i18n="nav.users.user_profile"> Venue
                         </a>
                     </li>
 
@@ -98,17 +98,17 @@
 
             @can('roles')
             <li class="nav-item {{ Route::is('dashboard.roles.*') ? 'active' : '' }}"><a href="#"><i
-                        class="la la-television"></i><span class="menu-title" data-i18n="nav.role.main"> الصلاحيات
+                        class="la la-television"></i><span class="menu-title" data-i18n="nav.role.main"> Roles
                     </span></a>
                 <ul class="menu-content">
                     <li class="{{ Route::is('dashboard.roles.index') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.roles.index') }}" data-i18n="nav.role.index">
-                            جميع الصلاحيات </a>
+                            All Roles </a>
                     </li>
                     <li class="{{ Route::is('dashboard.roles.create') ? 'active' : '' }}">
                         <a class="menu-item" href="{{ route('dashboard.roles.create') }}"
                             data-i18n="nav.templates.vert.classic_menu"> <i class="la la-plus"></i> <span
-                                class="menu-title""> اضافة صلاحية </a>
+                                class="menu-title""> Add Role </a>
                           </li>
                       </ul>
                   </li>
@@ -117,13 +117,13 @@
               @can('admins')
                   <li class=" nav-item {{ Route::is('dashboard.messages.*') ? 'active' : '' }}"><a href="#"><i
                                         class="la la-television"></i><span class="menu-title" data-i18n="nav.role.main">
-                                        ادارة الرسائل
+                                        Messages Management
                                     </span></a>
                                 <ul class="menu-content">
                                     <li class="{{ Route::is('dashboard.roles.index') ? 'active' : '' }}">
                                         <a class="menu-item" href="{{ route('dashboard.messages.index') }}"
                                             data-i18n="nav.role.index">
-                                            جميع الرسائل </a>
+                                            All Messages </a>
                                     </li>
                                 </ul>
                     </li>
@@ -131,12 +131,12 @@
 
                     @can('admins')
                     <li class="nav-item{{ Route::is('dashboard.admins.*') ? 'active' : '' }}"><a href="#"><i
-                                class="la la-user"></i><span class="menu-title" data-i18n="nav.users.main"> الموظفين
+                                class="la la-user"></i><span class="menu-title" data-i18n="nav.users.main"> Employees
                             </span></a>
                         <ul class="menu-content">
                             <li class="{{ Route::is('dashboard.admins.index') ? 'active' : '' }}">
                                 <a class="menu-item" href="{{ route('dashboard.admins.index') }}"
-                                    data-i18n="nav.users.user_profile"> الموظفين
+                                    data-i18n="nav.users.user_profile"> Employees
                                 </a>
                             </li>
                             <li class="{{ Route::is('dashboard.admins.tech') ? 'active' : '' }}">
@@ -146,7 +146,7 @@
                             </li>
                             <li class="{{ Route::is('dashboard.admins.create') ? 'active' : '' }}">
                                 <a class="menu-item" href="{{ route('dashboard.admins.create') }}"
-                                    data-i18n="nav.users.user_cards"> اضافة موظف </a>
+                                    data-i18n="nav.users.user_cards"> Add Employee </a>
                             </li>
                         </ul>
                     </li>
@@ -292,18 +292,17 @@
                     @endif
 
                     <li class="nav-item {{ Route::is('dashboard.update_profile.*') ? 'active' : '' }}"><a href="#"><i
-                                class="la la-user"></i><span class="menu-title" data-i18n="nav.users.main"> ادارة
-                                حسابي
+                                class="la la-user"></i><span class="menu-title" data-i18n="nav.users.main"> My Account
                             </span></a>
                         <ul class="menu-content">
                             <li class="{{ Route::is('dashboard.update_profile') ? 'active' : '' }}">
                                 <a class="menu-item" href="{{ route('dashboard.update_profile') }}"
-                                    data-i18n="nav.users.user_profile"> تعديل البيانات
+                                    data-i18n="nav.users.user_profile"> Edit Profile
                                 </a>
                             </li>
                             <li class="{{ Route::is('dashboard.update_password') ? 'active' : '' }}">
                                 <a class="menu-item" href="{{ route('dashboard.update_password') }}"
-                                    data-i18n="nav.users.user_profile"> تعديل كلمة المرور
+                                    data-i18n="nav.users.user_profile"> Change Password
                                 </a>
                             </li>
                         </ul>
@@ -311,14 +310,13 @@
 
                     @can('admins')
                     <li class="nav-item {{ Route::is('dashboard.setting.*') ? 'active' : '' }}"><a href="#"><i
-                                class="la la-television"></i><span class="menu-title" data-i18n="nav.role.main"> ادارة
-                                الاعدادات
+                                class="la la-television"></i><span class="menu-title" data-i18n="nav.role.main"> Settings Management
                             </span></a>
                         <ul class="menu-content">
                             <li class="{{ Route::is('dashboard.setting.index') ? 'active' : '' }}">
                                 <a class="menu-item" href="{{ route('dashboard.setting.index') }}"
                                     data-i18n="nav.role.index">
-                                    الاعدادات </a>
+                                    Settings </a>
                             </li>
                         </ul>
                     </li>

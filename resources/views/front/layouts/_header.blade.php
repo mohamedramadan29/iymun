@@ -6,6 +6,7 @@
     <title>  @yield('title') </title>
     <meta name="description" content="Join the premier youth diplomacy conference in New York City. IYMUN & American Diplomats MUN - October 2026">
 
+    <link rel="icon" type="image/png" href="{{ asset('assets/front/images/logo.webp') }}">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 

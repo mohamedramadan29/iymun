@@ -1,17 +1,17 @@
 @extends('dashboard.layouts.app')
-@section('title', ' ادارة المستخدمين ')
+@section('title', ' Users Management ')
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> ادارة الطلبات والمستخدمين </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> Orders & Users Management </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">Home </a>
                             </li>
-                            <li class="breadcrumb-item active"> ادارة الطلبات والمستخدمين
+                            <li class="breadcrumb-item active"> Orders & Users Management
                             </li>
                         </ol>
                     </div>
@@ -38,13 +38,13 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th> الاسم </th>
-                                                <th> البريد الالكتروني </th>
-                                                <th> الحالة </th>
-                                                <th> حالة الدفع </th>
-                                                <th> حالة الاكتمال </th>
-                                                <th> تاريخ التسجيل </th>
-                                                <th> العمليات </th>
+                                                <th> Name </th>
+                                                <th> Email </th>
+                                                <th> Status </th>
+                                                <th> Payment Status </th>
+                                                <th> Completion Status </th>
+                                                <th> Registration Date </th>
+                                                <th> Actions </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -57,9 +57,9 @@
                                                 <td> {{ $user->payment_status }} </td>
                                                 <td>
                                                     @if ($user->complete_application == 1)
-                                                    <span class="badge badge-success">مكتمل</span>
+                                                    <span class="badge badge-success">Completed</span>
                                                     @else
-                                                    <span class="badge badge-danger">غير مكتمل</span>
+                                                    <span class="badge badge-danger">Incomplete</span>
                                                     @endif
                                                 </td>
                                                 <td> {{ $user->created_at->format('Y/m/d - h:i a') }} </td>
@@ -75,14 +75,14 @@
                                                     </a>
                                                     <a href="{{ route('dashboard.user.destroy', $user->id) }}"
                                                         class="btn btn-danger btn-sm"
-                                                        onclick="return(confirm('هل انت متاكد من الحذف '))">
+                                                        onclick="return(confirm('Are you sure you want to delete?'))">
                                                         <i class="la la-trash"></i>
                                                     </a>
                                                 </td>
                                             </tr>
 
                                             @empty
-                                            <td colspan="4"> لا يوجد بيانات </td>
+                                            <td colspan="4"> No data available </td>
                                             @endforelse
                                         </tbody>
                                     </table>

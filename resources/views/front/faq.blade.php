@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', 'FAQ | IYMUN 2026 - Frequently Asked Questions')
+@section('title', 'FAQ | IYADMUN 2026 - Frequently Asked Questions')
 
 @section('content')
     <!-- ==================== PAGE HERO ==================== -->
@@ -16,13 +16,13 @@
                 Frequently Asked Questions
             </div>
 
-            <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+            <h1 class="hero-title fade-in-up">
                 Got Questions?<br>
                 <span class="gradient-text">We've Got Answers</span>
             </h1>
 
             <p class="hero-subtitle fade-in-up" style="max-width: 900px; margin: 0 auto;">
-                Everything you need to know about IYMUN 2026
+                Everything you need to know about IYADMUN 2026
             </p>
         </div>
 
@@ -51,12 +51,12 @@
                             <div class="accordion-item mb-3 border-0 rounded-4 shadow-sm">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button rounded-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#g1">
-                                        What is IYMUN 2026?
+                                        What is IYADMUN 2026?
                                     </button>
                                 </h2>
                                 <div id="g1" class="accordion-collapse collapse show" data-bs-parent="#generalFAQ">
                                     <div class="accordion-body" style="font-size: 1.05rem; line-height: 1.9;">
-                                        IYMUN 2026 is the <strong>International Youth Model United Nations</strong> conference taking place in <strong>New York City in October 2026</strong>. In partnership with American Diplomats, we bring together 2,000+ young leaders from 50+ countries to debate critical global issues like preventing violent extremism and post-conflict peacebuilding.
+                                        IYADMUN 2026 is the <strong>International Youth Model United Nations</strong> conference taking place in <strong>New York City in October 2026</strong>. In partnership with American Diplomats, we bring together 2,000+ young leaders from 50+ countries to debate critical global issues like preventing violent extremism and post-conflict peacebuilding.
                                     </div>
                                 </div>
                             </div>
@@ -79,12 +79,12 @@
                             <div class="accordion-item mb-3 border-0 rounded-4 shadow-sm">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed rounded-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#g3">
-                                        Who can attend IYMUN 2026?
+                                        Who can attend IYADMUN 2026?
                                     </button>
                                 </h2>
                                 <div id="g3" class="accordion-collapse collapse" data-bs-parent="#generalFAQ">
                                     <div class="accordion-body" style="font-size: 1.05rem; line-height: 1.9;">
-                                        IYMUN is open to <strong>high school and university students aged 15-25</strong> from all countries. No prior MUN experience required! We welcome both beginners (UNGA committee) and experienced delegates (PBC committee).
+                                        IYADMUN is open to <strong>high school and university students aged 15-25</strong> from all countries. No prior MUN experience required! We welcome both beginners (UNGA committee) and experienced delegates (PBC committee).
                                     </div>
                                 </div>
                             </div>

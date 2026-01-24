@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title', 'Committees | IYMUN 2026 - UNGA & UN Peacebuilding Commission')
+@section('title', 'Committees | IYADMUN 2026 - UNGA & UN Peacebuilding Commission')
 @section('content')
 <!-- ==================== PAGE HERO ==================== -->
 <section class="hero-wrapper" style="height: 70vh; min-height: 500px;">
@@ -16,7 +16,7 @@
             {{ $content->getTranslation('hero_title',app()->getLocale()) }}
         </div>
 
-        <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+        <h1 class="hero-title fade-in-up">
             {{ $content->getTranslation('hero_sub_title',app()->getLocale()) }} <span class="gradient-text"> {{ $content->getTranslation('hero_color_title',app()->getLocale()) }}  </span>
         </h1>
 
@@ -42,7 +42,7 @@
 
         <div class="row g-5">
             <!-- COMMITTEE 1: UNGA -->
-            <div class="col-12" data-aos="fade-right" data-aos-delay="200">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-custom h-100" style="border: 3px solid #10B981;">
                     <div class="text-center mb-4">
                         <div style="font-size: 6rem; margin-bottom: 1rem;">🌍</div>
@@ -106,7 +106,7 @@
             </div>
 
             <!-- COMMITTEE 2: PBC -->
-            <div class="col-12" data-aos="fade-left" data-aos-delay="300">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                 <div class="card-custom h-100" style="border: 3px solid #EF4444;">
                     <div class="text-center mb-4">
                         <div style="font-size: 6rem; margin-bottom: 1rem;">🕊️</div>

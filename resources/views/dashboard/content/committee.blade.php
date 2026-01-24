@@ -1,19 +1,19 @@
 @extends('dashboard.layouts.app')
 
-@section('title', ' محتوي صفحة اللجان ')
+@section('title', ' Committee Page Content ')
 
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> محتوي صفحة اللجان </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> Committee Page Content </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">Home </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#"> محتوي صفحة اللجان
+                            <li class="breadcrumb-item"><a href="#"> Committee Page Content
                                 </a>
                             </li>
 
@@ -30,7 +30,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> محتوي صفحة اللجان </h4>
+                                <h4 class="card-title" id="basic-layout-form"> Committee Page Content </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             </div>
                             <div class="card-content collapse show">
@@ -41,10 +41,10 @@
                                         <div class="form-body">
 
                                             <!-- Hero Section -->
-                                            <h6 style="badge badge-info bg-info"> قسم الهيدر (Hero Section) </h6>
+                                            <h6 style="badge badge-info bg-info"> Hero Section </h6>
                                             <hr>
 
-                                            @foreach(['hero_title' => 'العنوان الرئيسي', 'hero_sub_title' => 'العنوان الفرعي', 'hero_color_title' => 'العنوان الملون', 'hero_description' => 'الوصف'] as $field => $label)
+                                            @foreach(['hero_title' => 'Main Title', 'hero_sub_title' => 'Sub Title', 'hero_color_title' => 'Colored Title', 'hero_description' => 'Description'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -68,7 +68,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label> صورة الهيدر </label>
+                                                        <label> Hero Image </label>
                                                         <input type="file" class="form-control" name="hero_image">
                                                         @if($content->hero_image)
                                                         <img src="{{ asset('assets/uploads/content/committee/'.$content->hero_image) }}" style="width: 100px;height: 100px">
@@ -78,10 +78,10 @@
                                             </div>
 
                                             <!-- Choose Committee Section -->
-                                            <h6 style="badge badge-info bg-info"> قسم اختيار اللجنة (Choose Committee) </h6>
+                                            <h6 style="badge badge-info bg-info"> Choose Committee Section </h6>
                                             <hr>
 
-                                            @foreach(['committee_title' => 'العنوان', 'committee_desc' => 'الوصف'] as $field => $label)
+                                            @foreach(['committee_title' => 'Title', 'committee_desc' => 'Description'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -99,10 +99,10 @@
                                             @endforeach
 
                                             <!-- Committee 1 -->
-                                            <h6 style="badge badge-error bg-danger"> اللجنة الأولى (Committee 1) </h6>
+                                            <h6 style="badge badge-error bg-danger"> First Committee </h6>
                                             <hr>
 
-                                            @foreach(['com1_slogan' => 'الشعار (Slogan)', 'com1_topic_title' => 'عنوان الموضوع', 'com1_topic_p' => 'وصف الموضوع', 'com1_discus_title' => 'عنوان المناقشة', 'com1_learn_title' => 'عنوان التعلم'] as $field => $label)
+                                            @foreach(['com1_slogan' => 'Slogan', 'com1_topic_title' => 'Topic Title', 'com1_topic_p' => 'Topic Description', 'com1_discus_title' => 'Discussion Title', 'com1_learn_title' => 'Learning Title'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -119,36 +119,36 @@
                                             </div>
                                             @endforeach
 
-                                            <label>نقاط المناقشة (Committee 1)</label>
+                                            <label>Discussion Points (Committee 1)</label>
                                             @for($i = 1; $i <= 5; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> نقطة المناقشة {{ $i }} (ar) </label>
+                                                        <label> Discussion Point {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="com1_discus_point{{ $i }}[ar]" required value="{{ $content->getTranslation('com1_discus_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> نقطة المناقشة {{ $i }} (en) </label>
+                                                        <label> Discussion Point {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="com1_discus_point{{ $i }}[en]" required value="{{ $content->getTranslation('com1_discus_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
                                             </div>
                                             @endfor
 
-                                            <label>نقاط التعلم (Committee 1)</label>
+                                            <label>Learning Points (Committee 1)</label>
                                             @for($i = 1; $i <= 4; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> نقطة التعلم {{ $i }} (ar) </label>
+                                                        <label> Learning Point {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="com1_learn_point{{ $i }}[ar]" required value="{{ $content->getTranslation('com1_learn_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> نقطة التعلم {{ $i }} (en) </label>
+                                                        <label> Learning Point {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="com1_learn_point{{ $i }}[en]" required value="{{ $content->getTranslation('com1_learn_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -157,10 +157,10 @@
 
 
                                             <!-- Committee 2 -->
-                                            <h6 style="badge badge-warning bg-warning"> اللجنة الثانية (Committee 2) </h6>
+                                            <h6 style="badge badge-warning bg-warning"> Second Committee </h6>
                                             <hr>
 
-                                            @foreach(['com2_slogan' => 'الشعار (Slogan)', 'com2_topic_title' => 'عنوان الموضوع', 'com2_topic_p' => 'وصف الموضوع', 'com2_discus_title' => 'عنوان المناقشة', 'com2_learn_title' => 'عنوان التعلم'] as $field => $label)
+                                            @foreach(['com2_slogan' => 'Slogan', 'com2_topic_title' => 'Topic Title', 'com2_topic_p' => 'Topic Description', 'com2_discus_title' => 'Discussion Title', 'com2_learn_title' => 'Learning Title'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -177,36 +177,36 @@
                                             </div>
                                             @endforeach
 
-                                            <label>نقاط المناقشة (Committee 2)</label>
+                                            <label>Discussion Points (Committee 2)</label>
                                             @for($i = 1; $i <= 5; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> نقطة المناقشة {{ $i }} (ar) </label>
+                                                        <label> Discussion Point {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="com2_discus_point{{ $i }}[ar]" required value="{{ $content->getTranslation('com2_discus_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> نقطة المناقشة {{ $i }} (en) </label>
+                                                        <label> Discussion Point {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="com2_discus_point{{ $i }}[en]" required value="{{ $content->getTranslation('com2_discus_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
                                             </div>
                                             @endfor
 
-                                            <label>نقاط التعلم (Committee 2)</label>
+                                            <label>Learning Points (Committee 2)</label>
                                             @for($i = 1; $i <= 4; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> نقطة التعلم {{ $i }} (ar) </label>
+                                                        <label> Learning Point {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="com2_learn_point{{ $i }}[ar]" required value="{{ $content->getTranslation('com2_learn_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> نقطة التعلم {{ $i }} (en) </label>
+                                                        <label> Learning Point {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="com2_learn_point{{ $i }}[en]" required value="{{ $content->getTranslation('com2_learn_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -214,10 +214,10 @@
                                             @endfor
 
                                             <!-- How Work Section -->
-                                            <h6 style="badge badge-info bg-info"> كيف نعمل (How It Works) </h6>
+                                            <h6 style="badge badge-info bg-info"> How It Works </h6>
                                             <hr>
 
-                                            @foreach(['how_work_title' => 'العنوان', 'how_work_desc' => 'الوصف'] as $field => $label)
+                                            @foreach(['how_work_title' => 'Title', 'how_work_desc' => 'Description'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -234,18 +234,18 @@
                                             </div>
                                             @endforeach
 
-                                            <label>خطوات العمل</label>
+                                            <label>Workflow Steps</label>
                                             @for($i = 1; $i <= 4; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> عنوان الخطوة {{ $i }} (ar) </label>
+                                                        <label> Step Title {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="how_work_title_point{{ $i }}[ar]" required value="{{ $content->getTranslation('how_work_title_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> عنوان الخطوة {{ $i }} (en) </label>
+                                                        <label> Step Title {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="how_work_title_point{{ $i }}[en]" required value="{{ $content->getTranslation('how_work_title_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -253,13 +253,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> وصف الخطوة {{ $i }} (ar) </label>
+                                                        <label> Step Description {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="how_work_desc_point{{ $i }}[ar]" required value="{{ $content->getTranslation('how_work_desc_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> وصف الخطوة {{ $i }} (en) </label>
+                                                        <label> Step Description {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="how_work_desc_point{{ $i }}[en]" required value="{{ $content->getTranslation('how_work_desc_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -269,10 +269,10 @@
 
 
                                             <!-- Why Join Section -->
-                                            <h6 style="badge badge-info bg-info"> لماذا تنضم إلينا (Why Join) </h6>
+                                            <h6 style="badge badge-info bg-info"> Why Join </h6>
                                             <hr>
 
-                                            @foreach(['why_join_title' => 'العنوان', 'why_join_desc' => 'الوصف'] as $field => $label)
+                                            @foreach(['why_join_title' => 'Title', 'why_join_desc' => 'Description'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -289,18 +289,18 @@
                                             </div>
                                             @endforeach
 
-                                            <label>نقاط لماذا تنضم</label>
+                                            <label>Why Join Points</label>
                                             @for($i = 1; $i <= 6; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> عنوان النقطة {{ $i }} (ar) </label>
+                                                        <label> Point Title {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="why_join_title_point{{ $i }}[ar]" required value="{{ $content->getTranslation('why_join_title_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> عنوان النقطة {{ $i }} (en) </label>
+                                                        <label> Point Title {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="why_join_title_point{{ $i }}[en]" required value="{{ $content->getTranslation('why_join_title_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -308,13 +308,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> وصف النقطة {{ $i }} (ar) </label>
+                                                        <label> Point Description {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="why_join_p_point{{ $i }}[ar]" required value="{{ $content->getTranslation('why_join_p_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> وصف النقطة {{ $i }} (en) </label>
+                                                        <label> Point Description {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="why_join_p_point{{ $i }}[en]" required value="{{ $content->getTranslation('why_join_p_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -325,7 +325,7 @@
                                         </div>
                                         <div class="form-actions">
                                             <button type="submit" class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> حفظ
+                                                <i class="la la-check-square-o"></i> Save
                                             </button>
 
                                         </div>

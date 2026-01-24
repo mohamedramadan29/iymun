@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('hero_img1');
             $table->string('hero_img2');
             $table->string('hero_img3');
-
+            $table->string('event_date');
             ########### Conference Section ###########
 
             $table->string('conference_title');
@@ -46,7 +46,15 @@ return new class extends Migration
             $table->string('why_step_p3');
             $table->string('why_main_title');
             $table->string('why_main_p');
-            ####################
+            #################### Numbers
+            $table->string('number1');
+            $table->string('number1_title');
+            $table->string('number2');
+            $table->string('number2_title');
+            $table->string('number3');
+            $table->string('number3_title');
+            $table->string('number4');
+            $table->string('number4_title');
             $table->timestamps();
         });
     }

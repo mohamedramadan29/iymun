@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\front\FrontController;
+use App\Http\Controllers\front\ContactController;
 use App\Http\Controllers\front\RegisterController;
 use App\Http\Controllers\front\auth\UserController;
 use App\Http\Controllers\front\auth\PaymentController;
@@ -49,7 +50,7 @@ Route::group(
         Route::controller(ForgetPasswordController::class)->group(function () {
             Route::get('forget-password', 'showForgetPasswordForm')->name('front.forget.password');
             Route::post('forget-password', 'sendResetLinkEmail')->name('front.forget.password.post');
-            Route::match(['post', 'get'], 'user/change-forget-password/{code}', 'change_forget_password');
+            Route::match(['post', 'get'], 'user/change-forget-password/{code}', 'change_forget_password')->name('user.change.forget.password');
             Route::post('user/update_forget_password', 'update_forget_password')->name('front.update.forget.password');
         });
         ################### End Forget Password Controller ##########################
@@ -67,6 +68,10 @@ Route::group(
                 Route::get('payment/success', 'paymentSuccess')->name('user.payment.success');
                 Route::get('payment/cancel', 'paymentCancel')->name('user.payment.cancel');
             });
+        });
+
+        Route::controller(ContactController::class)->group(function () {
+            Route::post('contact', 'send')->name('front.contact.send');
         });
     }
 );

@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', 'Contact Us | IYMUN 2026 - Get in Touch')
+@section('title', 'Contact Us | IYADMUN 2026 - Get in Touch')
 
 @section('content')
 <!-- ==================== PAGE HERO ==================== -->
@@ -18,7 +18,7 @@
             Get in Touch
         </div>
 
-        <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+        <h1 class="hero-title fade-in-up">
             We're Here to<br>
             <span class="gradient-text">Help You</span>
         </h1>
@@ -114,14 +114,15 @@
                 </div>
 
                 <div class="card-custom" data-aos="fade-up" data-aos-delay="200">
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" action="{{ route('front.contact.send') }}" method="POST">
+                        @csrf
                         <div class="row g-4">
                             <!-- Full Name -->
                             <div class="col-md-6">
                                 <label for="fullName" class="form-label fw-bold">Full Name <span
                                         style="color: #EF4444;">*</span></label>
                                 <input type="text" class="form-control form-control-lg rounded-3" id="fullName"
-                                    required>
+                                    name="name" required>
                                 <div class="invalid-feedback">Please provide your full name.</div>
                             </div>
 
@@ -129,7 +130,8 @@
                             <div class="col-md-6">
                                 <label for="email" class="form-label fw-bold">Email Address <span
                                         style="color: #EF4444;">*</span></label>
-                                <input type="email" class="form-control form-control-lg rounded-3" id="email" required>
+                                <input type="email" class="form-control form-control-lg rounded-3" id="email"
+                                    name="email" required>
                                 <div class="invalid-feedback">Please provide a valid email.</div>
                             </div>
 
@@ -137,35 +139,13 @@
                             <div class="col-md-6">
                                 <label for="phone" class="form-label fw-bold">Phone Number</label>
                                 <input type="tel" class="form-control form-control-lg rounded-3" id="phone"
-                                    placeholder="+1 (555) 123-4567">
+                                    name="phone" placeholder="+1 (555) 123-4567">
                             </div>
-
-                            <!-- Country -->
-                            <div class="col-md-6">
-                                <label for="country" class="form-label fw-bold">Country <span
-                                        style="color: #EF4444;">*</span></label>
-                                <select class="form-select form-select-lg rounded-3" id="country" required>
-                                    <option value="">Select your country</option>
-                                    <option value="USA">United States</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="Canada">Canada</option>
-                                    <option value="Egypt">Egypt</option>
-                                    <option value="UAE">United Arab Emirates</option>
-                                    <option value="Saudi Arabia">Saudi Arabia</option>
-                                    <option value="India">India</option>
-                                    <option value="Pakistan">Pakistan</option>
-                                    <option value="Nigeria">Nigeria</option>
-                                    <option value="Kenya">Kenya</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                                <div class="invalid-feedback">Please select your country.</div>
-                            </div>
-
                             <!-- Subject -->
                             <div class="col-12">
                                 <label for="subject" class="form-label fw-bold">Subject <span
                                         style="color: #EF4444;">*</span></label>
-                                <select class="form-select form-select-lg rounded-3" id="subject" required>
+                                <select class="form-select form-select-lg rounded-3" id="subject" name="subject" required>
                                     <option value="">Select a topic</option>
                                     <option value="Registration">Registration Question</option>
                                     <option value="Pricing">Pricing & Payment</option>
@@ -183,7 +163,7 @@
                             <div class="col-12">
                                 <label for="message" class="form-label fw-bold">Your Message <span
                                         style="color: #EF4444;">*</span></label>
-                                <textarea class="form-control rounded-3" id="message" rows="6" required
+                                <textarea class="form-control rounded-3" id="message" rows="6" name="message" required
                                     placeholder="Tell us how we can help you..."></textarea>
                                 <div class="invalid-feedback">Please write your message.</div>
                             </div>
@@ -208,7 +188,7 @@
 <section class="section" style="background: linear-gradient(135deg, #001F3F 0%, #0A72B5 100%);">
     <div class="container">
         <div class="row g-5 align-items-center">
-            <div class="col-lg-6" data-aos="fade-right">
+            <div class="col-lg-6" data-aos="fade-up">
                 <h2 class="display-4 fw-bold text-white mb-4">
                     Our Office 🏢
                 </h2>
@@ -270,7 +250,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-left">
+            <div class="col-lg-6" data-aos="fade-up">
                 <div class="rounded-5 overflow-hidden" style="box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215921315725!2d-73.97769368459395!3d40.752728979328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"

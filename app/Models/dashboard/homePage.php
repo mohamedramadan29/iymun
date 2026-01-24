@@ -36,6 +36,10 @@ class homePage extends Model
         'why_step_p2',
         'why_step_p3',
         'why_main_title',
-        'why_main_p'
+        'why_main_p',
+        'number1_title',
+        'number2_title',
+        'number3_title',
+        'number4_title',
     ];
 }

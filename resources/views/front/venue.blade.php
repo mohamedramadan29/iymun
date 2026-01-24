@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', 'Venue | IYMUN 2026 - International Youth Diplomacy Conference')
+@section('title', 'Venue | IYADMUN 2026 - International Youth Diplomacy Conference')
 @section('css')
 <style>
     /* Simple & Clean Design */
@@ -104,7 +104,7 @@
             {{ $content->getTranslation('hero_title',app()->getLocale()) }}
         </div>
 
-        <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+        <h1 class="hero-title fade-in-up">
             {{ $content->getTranslation('hero_sub_title',app()->getLocale()) }} <span class="gradient-text"> {{
                 $content->getTranslation('hero_color_title',app()->getLocale()) }} </span>
         </h1>
@@ -276,7 +276,7 @@
                             <div class="contact-item">
                                 <h5 class="fw-bold mb-3">📧 Email</h5>
                                 <p class="mb-2">
-                                    <a href="mailto:info@iymun.net">info@iymun.net</a>
+                                    <a href="mailto:info@IYADMUN.net">info@IYADMUN.net</a>
                                 </p>
                                 <p class="mb-0">
                                     <a href="mailto:cos@ihrc-hq.org">cos@ihrc-hq.org</a>

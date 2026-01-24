@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', 'Forget Password | IYADMUN 2026')
+@section('title', 'Reset Password | IYADMUN 2026')
 @section('css')
 <style>
     .call_to_action {
@@ -21,17 +21,26 @@
                 <i class="fas fa-globe-americas"></i>
             </div>
 
-            <h2 class="text-center fw-bold mb-2" style="color: var(--un-blue-dark);">Forget Password ?</h2>
+            <h2 class="text-center fw-bold mb-2" style="color: var(--un-blue-dark);">Reset Password ?</h2>
 
-            <form method="post" action="{{ route('front.forget.password.post') }}">
+            <form method="post" action="{{ route('front.update.forget.password') }}">
                 @csrf
                 <div class="mb-3">
-                    <label class="form-label fw-bold">Email Address</label>
-                    <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control-custom"
+                    <input type="hidden" name="email" value="{{ $email }}" class="form-control form-control-custom"
                         placeholder="your.email@example.com" required>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">New Password</label>
+                    <input type="password" name="password" class="form-control form-control-custom"
+                        placeholder="Enter Password" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control form-control-custom"
+                        placeholder="Enter Confirm Password" required>
+                </div>
                 <button type="submit" class="btn btn-login">
-                    Send Reset Link
+                    Reset Password
                     <i class="fas fa-arrow-right ms-2"></i>
                 </button>
             </form>

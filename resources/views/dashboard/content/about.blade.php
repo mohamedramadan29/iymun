@@ -1,19 +1,19 @@
 @extends('dashboard.layouts.app')
 
-@section('title', ' محتوي صفحة من نحن ')
+@section('title', ' About Us Content ')
 
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> محتوي صفحة من نحن </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> About Us Content </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">Home </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#"> محتوي صفحة من نحن
+                            <li class="breadcrumb-item"><a href="#"> About Us Content
                                 </a>
                             </li>
 
@@ -30,7 +30,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> محتوي صفحة من نحن </h4>
+                                <h4 class="card-title" id="basic-layout-form"> About Us Content </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             </div>
                             <div class="card-content collapse show">
@@ -41,9 +41,9 @@
                                         <div class="form-body">
 
                                             <!-- Hero Section -->
-                                            <h6 style="badge badge-info bg-info"> قسم الهيدر (Hero Section) </h6>
+                                            <h6 style="badge badge-info bg-info"> Hero Section </h6>
                                             <hr>
-                                            @foreach(['hero_title' => 'العنوان الرئيسي', 'hero_sub_title' => 'العنوان الفرعي', 'hero_color_title' => 'العنوان الملون', 'hero_description' => 'الوصف'] as $field => $label)
+                                            @foreach(['hero_title' => 'Main Title', 'hero_sub_title' => 'Sub Title', 'hero_color_title' => 'Colored Title', 'hero_description' => 'Description'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -65,9 +65,9 @@
                                             @endforeach
 
                                             <!-- About Section -->
-                                            <h6 style="badge badge-info bg-info"> قسم من نحن (About Section) </h6>
+                                            <h6 style="badge badge-info bg-info"> About Section </h6>
                                             <hr>
-                                            @foreach(['about_title' => 'عنوان من نحن', 'about_desc' => 'وصف من نحن'] as $field => $label)
+                                            @foreach(['about_title' => 'About Title', 'about_desc' => 'About Description'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -87,7 +87,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label> صورة من نحن </label>
+                                                        <label> About Image </label>
                                                         <input type="file" class="form-control" name="about_image">
                                                         @if($content->about_image)
                                                         <img src="{{ asset('assets/uploads/content/about/'.$content->about_image) }}" style="width: 100px;height: 100px">
@@ -96,18 +96,18 @@
                                                 </div>
                                             </div>
 
-                                            <label>نقاط من نحن</label>
+                                            <label>About Points</label>
                                             @for($i = 1; $i <= 4; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> النقطة {{ $i }} (ar) </label>
+                                                        <label> Point {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="about_point{{ $i }}[ar]" required value="{{ $content->getTranslation('about_point'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> النقطة {{ $i }} (en) </label>
+                                                        <label> Point {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="about_point{{ $i }}[en]" required value="{{ $content->getTranslation('about_point'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -115,10 +115,10 @@
                                             @endfor
 
                                             <!-- Mission & Vision -->
-                                            <h6 style="badge badge-info bg-info"> الرؤية والرسالة </h6>
+                                            <h6 style="badge badge-info bg-info"> Vision & Mission </h6>
                                             <hr>
 
-                                            @foreach(['m_section_title' => 'عنوان القسم', 'm_section_p' => 'وصف القسم', 'mission_title' => 'عنوان الرسالة', 'mission_desc' => 'وصف الرسالة', 'vission_title' => 'عنوان الرؤية', 'vission_desc' => 'وصف الرؤية'] as $field => $label)
+                                            @foreach(['m_section_title' => 'Section Title', 'm_section_p' => 'Section Description', 'mission_title' => 'Mission Title', 'mission_desc' => 'Mission Description', 'vission_title' => 'Vision Title', 'vission_desc' => 'Vision Description'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -136,10 +136,10 @@
                                             @endforeach
 
                                             <!-- Core Values -->
-                                            <h6 style="badge badge-info bg-info"> القيم الجوهرية (Core Values) </h6>
+                                            <h6 style="badge badge-info bg-info"> Core Values </h6>
                                             <hr>
 
-                                            @foreach(['core_title' => 'عنوان القيم', 'core_p' => 'وصف القيم'] as $field => $label)
+                                            @foreach(['core_title' => 'Values Title', 'core_p' => 'Values Description'] as $field => $label)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -156,18 +156,18 @@
                                             </div>
                                             @endforeach
 
-                                            <label>نقاط القيم</label>
+                                            <label>Values Points</label>
                                             @for($i = 1; $i <= 6; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> عنوان النقطة {{ $i }} (ar) </label>
+                                                        <label> Point Title {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="core_point_title{{ $i }}[ar]" required value="{{ $content->getTranslation('core_point_title'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> عنوان النقطة {{ $i }} (en) </label>
+                                                        <label> Point Title {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="core_point_title{{ $i }}[en]" required value="{{ $content->getTranslation('core_point_title'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -175,13 +175,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> وصف النقطة {{ $i }} (ar) </label>
+                                                        <label> Point Description {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="core_point_p{{ $i }}[ar]" required value="{{ $content->getTranslation('core_point_p'.$i, 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> وصف النقطة {{ $i }} (en) </label>
+                                                        <label> Point Description {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="core_point_p{{ $i }}[en]" required value="{{ $content->getTranslation('core_point_p'.$i, 'en') }}">
                                                     </div>
                                                 </div>
@@ -190,36 +190,36 @@
                                             @endfor
 
                                             <!-- Differentiators -->
-                                            <h6 style="badge badge-info bg-info"> لماذا نحن (Differentiators) </h6>
+                                            <h6 style="badge badge-info bg-info"> Why Us </h6>
                                             <hr>
 
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> العنوان (ar) </label>
+                                                        <label> Title (ar) </label>
                                                         <input type="text" class="form-control" name="diff_title[ar]" required value="{{ $content->getTranslation('diff_title', 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> العنوان (en) </label>
+                                                        <label> Title (en) </label>
                                                         <input type="text" class="form-control" name="diff_title[en]" required value="{{ $content->getTranslation('diff_title', 'en') }}">
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <label>نقاط التميز</label>
+                                            <label>Distinction Points</label>
                                             @for($i = 1; $i <= 4; $i++)
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> عنوان النقطة {{ $i }} (ar) </label>
+                                                        <label> Point Title {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="diff_point{{ $i }}_title[ar]" required value="{{ $content->getTranslation('diff_point'.$i.'_title', 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> عنوان النقطة {{ $i }} (en) </label>
+                                                        <label> Point Title {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="diff_point{{ $i }}_title[en]" required value="{{ $content->getTranslation('diff_point'.$i.'_title', 'en') }}">
                                                     </div>
                                                 </div>
@@ -227,13 +227,13 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> وصف النقطة {{ $i }} (ar) </label>
+                                                        <label> Point Description {{ $i }} (ar) </label>
                                                         <input type="text" class="form-control" name="diff_point{{ $i }}_p[ar]" required value="{{ $content->getTranslation('diff_point'.$i.'_p', 'ar')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> وصف النقطة {{ $i }} (en) </label>
+                                                        <label> Point Description {{ $i }} (en) </label>
                                                         <input type="text" class="form-control" name="diff_point{{ $i }}_p[en]" required value="{{ $content->getTranslation('diff_point'.$i.'_p', 'en') }}">
                                                     </div>
                                                 </div>
@@ -244,7 +244,7 @@
                                         </div>
                                         <div class="form-actions">
                                             <button type="submit" class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> حفظ
+                                                <i class="la la-check-square-o"></i> Save
                                             </button>
 
                                         </div>

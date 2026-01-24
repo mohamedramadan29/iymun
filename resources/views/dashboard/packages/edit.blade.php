@@ -1,23 +1,22 @@
 @extends('dashboard.layouts.app')
 
-@section('title', ' تعديل خطة ')
+@section('title', ' Edit Plan ')
 
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> تعديل الخطة </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> Edit Plan </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">Home </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.packages.index') }}"> الخطط
-                                    والاسعار
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.packages.index') }}"> Plans & Pricing
                                 </a>
                             </li>
-                            <li class="breadcrumb-item active"><a href="#"> تعديل الخطط </a>
+                            <li class="breadcrumb-item active"><a href="#"> Edit Plan </a>
                             </li>
                         </ol>
                     </div>
@@ -32,7 +31,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> تعديل الخطة </h4>
+                                <h4 class="card-title" id="basic-layout-form"> Edit Plan </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
 
                             </div>
@@ -45,7 +44,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> العنوان (ar) </label>
+                                                        <label> Title (ar) </label>
                                                         <input type="text" class="form-control" name="title[ar]"
                                                             required
                                                             value="{{ $package->getTranslation('title','ar') }}">
@@ -53,7 +52,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> العنوان (en) </label>
+                                                        <label> Title (en) </label>
                                                         <input type="text" class="form-control" name="title[en]"
                                                             required
                                                             value="{{ $package->getTranslation('title','en') }}">
@@ -63,21 +62,21 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label> السعر </label>
+                                                        <label> Price </label>
                                                         <input type="number" class="form-control" name="price" required
                                                             value="{{ $package->price }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label> من تاريخ </label>
+                                                        <label> From Date </label>
                                                         <input type="date" class="form-control" name="from_date"
                                                             required value="{{ $package->from_date }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label> إلى تاريخ </label>
+                                                        <label> To Date </label>
                                                         <input type="date" class="form-control" name="to_date" required
                                                             value="{{ $package->to_date }}">
                                                     </div>
@@ -87,7 +86,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> slogan (ar) </label>
+                                                        <label> Slogan (ar) </label>
                                                         <input type="text" class="form-control" name="slogan[ar]"
                                                             required
                                                             value="{{ $package->getTranslation('slogan','ar') }}">
@@ -95,7 +94,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> slogan (en) </label>
+                                                        <label> Slogan (en) </label>
                                                         <input type="text" class="form-control" name="slogan[en]"
                                                             required
                                                             value="{{ $package->getTranslation('slogan','en') }}">
@@ -106,7 +105,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> المميزات (ar) </label>
+                                                        <label> Features (ar) </label>
                                                         <textarea name="features[ar]" id="" class="form-control"
                                                             required>{{ $package->getTranslation('features','ar') }}</textarea>
 
@@ -114,7 +113,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> المميزات (en) </label>
+                                                        <label> Features (en) </label>
                                                         <textarea name="features[en]" id="" class="form-control"
                                                             required>{{ $package->getTranslation('features','en') }}</textarea>
 
@@ -124,7 +123,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label> اللون </label>
+                                                        <label> Color </label>
                                                         <input type="color" class="form-control" name="color" required
                                                             value="{{ $package->color }}">
                                                     </div>
@@ -136,7 +135,7 @@
                                         </div>
                                         <div class="form-actions">
                                             <button type="submit" class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> تعديل
+                                                <i class="la la-check-square-o"></i> Update
                                             </button>
 
                                         </div>

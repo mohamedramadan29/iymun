@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('title')
-الرئيسية
+Home
 @endsection
 @section('content')
 <div class="app-content content">
@@ -17,7 +17,7 @@
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
                                         <h3 class="info"> {{ $users->count() }} </h3>
-                                        <h6> المستخدمين والطلبات </h6>
+                                        <h6> Users & Orders </h6>
                                     </div>
                                     <div>
                                         <i class="float-right icon-basket-loaded info font-large-2"></i>
@@ -34,7 +34,7 @@
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
                                         <h3 class="info"> {{ $users_under_review->count() }} </h3>
-                                        <h6> طلبات تحت المراجعة </h6>
+                                        <h6> Orders Under Review </h6>
                                     </div>
                                     <div>
                                         <i class="float-right icon-basket-loaded info font-large-2"></i>
@@ -51,7 +51,7 @@
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
                                         <h3 class="info"> {{ $users_approved->count() }} </h3>
-                                        <h6> طلبات تمت الموافقة عليها </h6>
+                                        <h6> Approved Orders </h6>
                                     </div>
                                     <div>
                                         <i class="float-right icon-basket-loaded info font-large-2"></i>
@@ -68,7 +68,7 @@
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
                                         <h3 class="info"> {{ $users_completed->count() }} </h3>
-                                        <h6> تم اكمال الدفع </h6>
+                                        <h6> Payment Completed </h6>
                                     </div>
                                     <div>
                                         <i class="float-right icon-basket-loaded info font-large-2"></i>
@@ -85,7 +85,7 @@
                                 <div class="media d-flex">
                                     <div class="text-left media-body">
                                         <h3 class="info"> {{ $users_rejected->count() }} </h3>
-                                        <h6> طلبات مرفوضة </h6>
+                                        <h6> Rejected Orders </h6>
                                     </div>
                                     <div>
                                         <i class="float-right icon-basket-loaded info font-large-2"></i>

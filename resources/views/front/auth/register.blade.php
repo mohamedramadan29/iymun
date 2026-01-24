@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', 'Register Now | IYMUN 2026 - Secure Your Spot')
+@section('title', 'Register Now | IYADMUN 2026 - Secure Your Spot')
 @section('css')
 <style>
     .call_to_action {
@@ -31,7 +31,7 @@
         </h1>
 
         <p class="hero-subtitle fade-in-up" style="max-width: 900px; margin: 0 auto;">
-            Secure your spot at IYMUN & American Diplomats MUN 2026
+            Secure your spot at IYADMUN & American Diplomats MUN 2026
         </p>
     </div>
 </section>
@@ -42,7 +42,7 @@
         <div class="text-center mb-5">
             <h2 class="section-title" data-aos="fade-up">Registration Process</h2>
             <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                4 simple steps to join IYMUN 2026
+                4 simple steps to join IYADMUN 2026
             </p>
         </div>
 

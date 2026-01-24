@@ -1,21 +1,21 @@
 @extends('dashboard.layouts.app')
 
-@section('title', ' اضافة بريد جديد ')
+@section('title', ' Send New Email ')
 
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> اضافة بريد جديد </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> Send New Email </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">Home </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.mails.index') }}"> الايميلات </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.mails.index') }}"> Emails </a>
                             </li>
-                            <li class="breadcrumb-item active"><a href="#"> اضافة بريد الكتروني جديد </a>
+                            <li class="breadcrumb-item active"><a href="#"> Send New Email </a>
                             </li>
                         </ol>
                     </div>
@@ -30,7 +30,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> اضافة بريد الكتروني جديد </h4>
+                                <h4 class="card-title" id="basic-layout-form"> Send New Email </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
 
                             </div>
@@ -43,7 +43,7 @@
                                                 <input type="hidden" name="user_id" value="{{ $user->id }}" id="">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="name"> الاسم </label>
+                                                        <label for="name"> Name </label>
                                                         <input readonly type="text" id="name" class="form-control"
                                                             placeholder="  name " name="name" required
                                                             value="{{ $user->name }}">
@@ -51,7 +51,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="email"> البريد الالكتروني </label>
+                                                        <label for="email"> Email </label>
                                                         <input readonly type="email" id="email" class="form-control"
                                                             placeholder="  email " name="email" required
                                                             value="{{ $user->email }}">
@@ -59,7 +59,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="subject"> عنوان الرسالة </label>
+                                                        <label for="subject"> Subject </label>
                                                         <input type="text" id="subject" class="form-control"
                                                             placeholder="  subject " name="subject" required
                                                             value="{{ old('subject') }}">
@@ -71,7 +71,7 @@
 
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="subject"> الرسالة </label>
+                                                        <label for="subject"> Message </label>
                                                         <textarea name="message" required id=""
                                                             class="form-control">{{ old('message') }}</textarea>
                                                     </div>
@@ -81,10 +81,10 @@
                                         </div>
                                         <div class="form-actions">
                                             <button type="submit" class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> حفظ
+                                                <i class="la la-check-square-o"></i> Save
                                             </button>
                                             <button type="button" class="mr-1 btn btn-warning">
-                                                <i class="ft-x"></i> رجوع
+                                                <i class="ft-x"></i> Back
                                             </button>
 
                                         </div>

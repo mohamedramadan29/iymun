@@ -19,19 +19,19 @@
         rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css-rtl/vendors.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css/vendors.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css-rtl/app.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css-rtl/custom-rtl.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css/custom.css">
     <!-- END MODERN CSS-->
     <!-- BEGIN Page Level CSS-->
     <link rel="stylesheet" type="text/css"
-        href="{{ asset('assets/dashboard/') }}/css-rtl/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css-rtl/core/colors/palette-gradient.css">
+        href="{{ asset('assets/dashboard/') }}/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css/core/colors/palette-gradient.css">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/style-rtl.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/') }}/css/style.css">
    @yield('css')
     <!-- END Custom CSS-->
      @toastifyCss

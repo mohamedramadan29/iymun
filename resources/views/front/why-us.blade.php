@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title', 'Why Join IYMUN 2026 | Benefits & Opportunities')
+@section('title', 'Why Join IYADMUN 2026 | Benefits & Opportunities')
 @section('content')
 <!-- ==================== PAGE HERO ==================== -->
 <!-- ==================== PAGE HERO ==================== -->
@@ -17,7 +17,7 @@
             {{ $content->getTranslation('hero_title',app()->getLocale()) }}
         </div>
 
-        <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+        <h1 class="hero-title fade-in-up">
             {{ $content->getTranslation('hero_sub_title',app()->getLocale()) }} <span class="gradient-text"> {{
                 $content->getTranslation('hero_color_title',app()->getLocale()) }} </span>
         </h1>
@@ -309,7 +309,7 @@
         </div>
 
         <div class="row g-5">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-custom h-100" style="border: 3px solid #10B981;">
                     <div class="mb-2">
                         <div style="font-size: 5rem;"> 🎓 </div>
@@ -326,7 +326,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="card-custom h-100" style="border: 3px solid #4A90E2;">
                     <div class="mb-2">
                         <div style="font-size: 5rem;"> 💼 </div>

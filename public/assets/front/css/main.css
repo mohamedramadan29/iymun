@@ -95,6 +95,10 @@ body {
     background: rgba(10, 114, 181, 0.1);
 }
 
+.navbar-nav{
+    align-items: center;
+}
+
 .btn-register-nav {
     background: var(--gradient-primary);
     color: white !important;
@@ -103,6 +107,7 @@ body {
     font-weight: 700;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-register-nav:hover {
@@ -179,12 +184,14 @@ body {
 }
 
 .hero-title {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 900;
     /* font-family: 'Playfair Display', serif; */
     line-height: 1.1;
     margin-bottom: 1.5rem;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 80%;
+    margin: auto;
 }
 
 .gradient-text {
@@ -196,13 +203,13 @@ body {
 .hero-subtitle {
     font-size: 1.8rem;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     opacity: 0.95;
 }
 
 .hero-location {
     font-size: 1.3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,6 +230,92 @@ body {
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.hero-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    max-width: fit-content;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.countdown-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: inherit;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+.countdown-separator {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: -20px;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-countdown {
+        gap: 1rem;
+        padding: 1.2rem;
+        margin: 2rem auto;
+        border-radius: 20px;
+    }
+
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+
+    .countdown-label {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .countdown-separator {
+        font-size: 1.5rem;
+        margin-top: -15px;
+    }
+
+    .countdown-item {
+        min-width: 45px;
+    }
 }
 
 .btn-primary-custom {
@@ -499,11 +592,11 @@ body {
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .counter {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
 
@@ -648,17 +741,20 @@ form label {
     font-weight: 600;
     font-size: 14px;
 }
-form input{
+
+form input {
     outline: none;
     box-shadow: none;
 }
-form .form-control{
-      outline: none !important;
+
+form .form-control {
+    outline: none !important;
     box-shadow: none !important;
     font-size: 15px;
 }
-form .form-select{
-      outline: none !important;
+
+form .form-select {
+    outline: none !important;
     box-shadow: none !important;
     font-size: 15px;
 }
@@ -666,8 +762,83 @@ form .form-select{
 
 /* ########################### Start User Dashboard  */
 
-.dashboard_page{
+.dashboard_page {}
 
+.call_to_action .content{
+    padding:5rem;
 }
+/* ########################### Start Responsive Design #################
+############
+##############
+################# */
 
+@media(max-width:991px) {
+    .navbar-brand {
+        font-size: .8rem;
+    }
 
+    .navbar-custom {
+        padding: .4rem 0;
+    }
+
+    .hero-badge {
+        padding: 0.6rem .8rem;
+        font-size: .8rem;
+    }
+
+    .hero-title {
+        max-width: 100%;
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-location {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .hero-location span {
+        padding: 0.5rem .5rem;
+    }
+
+    .hero-countdown {
+        padding: .5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn-primary-custom {
+        padding: .6rem 1rem;
+        font-size: .8rem;
+    }
+
+    .hero-buttons .btn-secondary-custom {
+        padding: .6rem 1rem;
+        font-size: .8rem;
+    }
+    .navbar-nav{
+        align-items: normal;
+    }
+    .call_to_action .content{
+        padding:1rem;
+    }
+    .card-custom{
+        padding: 1rem;
+    }
+    .pricing-card-ultimate{
+        padding: 1rem;
+    }
+    .coming-soon-box{
+        padding: 2rem 1rem;
+    }
+    .contact-box{
+        padding: 1rem;
+    }
+}

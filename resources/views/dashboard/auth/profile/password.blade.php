@@ -1,19 +1,17 @@
 @extends('dashboard.layouts.app')
 
-@section('title', ' تعديل كلمة المرور  ')
+@section('title', ' Change Password ')
 
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                    <h3 class="mb-0 content-header-title d-inline-block"> حسابي </h3>
+                    <h3 class="mb-0 content-header-title d-inline-block"> My Account </h3>
                     <div class="row breadcrumbs-top d-inline-block">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
-                                </li>
-                                <li class="breadcrumb-item"><a href="{{ route('dashboard.admins.index') }}">  تعديل كلمة المرور  </a>
+                                <li class="breadcrumb-item"><a href="{{ route('dashboard.admins.index') }}">  Change Password </a>
                                 </li>
                             </ol>
                         </div>
@@ -28,7 +26,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> تعديل كلمة المرور   </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> Change Password </h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
 
                                 </div>
@@ -41,7 +39,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="name"> كلمة المرور القديمة  </label>
+                                                            <label for="name"> Old Password </label>
                                                             <input required type="password" id="password"
                                                                 class="form-control" placeholder="" name="password"
                                                                 value="">
@@ -49,14 +47,14 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="new_password"> كالمة المرور الجديدة </label>
+                                                            <label for="new_password"> New Password </label>
                                                             <input required type="password" id="new_password"
                                                                 class="form-control" placeholder="" name="new_password">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="new_password_confirmation"> تاكيد كلمة المرور </label>
+                                                            <label for="new_password_confirmation"> Confirm New Password </label>
                                                             <input required type="password" id="new_password_confirmation"
                                                                 class="form-control" placeholder="" name="new_password_confirmation">
                                                         </div>
@@ -65,10 +63,10 @@
                                             </div>
                                             <div class="form-actions">
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> حفظ
+                                                    <i class="la la-check-square-o"></i> Save
                                                 </button>
                                                 <button type="button" class="mr-1 btn btn-warning">
-                                                    <i class="ft-x"></i> رجوع
+                                                    <i class="ft-x"></i> Back
                                                 </button>
 
                                             </div>

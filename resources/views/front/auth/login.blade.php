@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 
-@section('title', 'Login | IYMUN 2026')
+@section('title', 'Login | IYADMUN 2026')
 @section('css')
 <style>
     .call_to_action {
@@ -21,7 +21,7 @@
         </div>
 
         <h2 class="text-center fw-bold mb-2" style="color: var(--un-blue-dark);">Welcome Back!</h2>
-        <p class="text-center text-muted mb-4">Sign in to access your IYMUN dashboard</p>
+        <p class="text-center text-muted mb-4">Sign in to access your IYADMUN dashboard</p>
 
         <form method="post" action="{{ route('front.login.post') }}">
             @csrf
@@ -44,7 +44,7 @@
                         Remember me
                     </label>
                 </div>
-                <a href="#" class="link-custom" style="font-size: 0.9rem;">Forgot Password?</a>
+                <a href="{{ route('front.forget.password') }}" class="link-custom" style="font-size: 0.9rem;">Forgot Password?</a>
             </div>
 
             <button type="submit" class="btn btn-login">
@@ -58,11 +58,11 @@
         </div>
 
         <div class="text-center">
-            <p class="mb-0">Don't have an account? <a href="registration.html" class="link-custom">Register Now</a></p>
+            <p class="mb-0">Don't have an account? <a href="{{ route('front.register') }}" class="link-custom">Register Now</a></p>
         </div>
 
         <div class="text-center mt-4">
-            <a href="index.html" class="link-custom" style="font-size: 0.9rem;">
+            <a href="{{ route('front.index') }}" class="link-custom" style="font-size: 0.9rem;">
                 <i class="fas fa-arrow-left me-2"></i>
                 Back to Home
             </a>

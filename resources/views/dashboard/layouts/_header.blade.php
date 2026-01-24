@@ -9,7 +9,7 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img class="brand-logo" alt="modern admin logo"
                             src="{{ asset('assets/front/images/logo.webp') }}">
-                        <h3 class="brand-text"> IYMUN </h3>
+                        <h3 class="brand-text"> IYADMUN </h3>
                     </a>
                 </li>
                 <li class="float-right nav-item d-none d-md-block"><a class="pr-0 nav-link modern-nav-toggle"
@@ -30,7 +30,7 @@
                 <ul class="float-right nav navbar-nav">
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                            <span class="mr-1"> مرحبا ,
+                            <span class="mr-1"> Welcome ,
                                 <span class="user-name text-bold-700"> {{ Auth::user()->name }} </span>
                             </span>
                             <span class="avatar avatar-online">
@@ -39,14 +39,14 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="{{ route('dashboard.update_profile') }}"><i
-                                    class="ft-user"></i> تعديل البيانات </a>
+                                    class="ft-user"></i> Edit Profile </a>
                             <a class="dropdown-item" href="{{ route('dashboard.update_password') }}"><i
-                                    class="ft-lock"></i> تغير كلمة المرور </a>
+                                    class="ft-lock"></i> Change Password </a>
                             <div class="dropdown-divider"></div>
                             <form method="POST" action="{{ route('dashboard.logout') }}">
                                 @csrf
                                 <button type="submit" class="dropdown-item" href="#"><i class="ft-power"></i>
-                                    تسجبل الخروج </button>
+                                    Logout </button>
                             </form>
 
                         </div>
@@ -66,7 +66,7 @@
                         <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                             <li class="dropdown-menu-header">
                                 <h6 class="m-0 dropdown-header">
-                                    <span class="grey darken-2"> الإشعارات </span>
+                                    <span class="grey darken-2"> Notifications </span>
                                 </h6>
                                 {{-- <span class="float-right m-0 notification-tag badge badge-default badge-danger">
                                     {{ $notifications->count() }} جديد
@@ -110,7 +110,7 @@
                             <li class="dropdown-menu-footer">
                                 <a id="mark-all-read" class="text-center dropdown-item text-muted"
                                     href="{{ route('dashboard.all_read') }}">
-                                    جعل جميع الإشعارات مقروءة
+                                    Mark all as read
                                 </a>
                             </li>
                         </ul>

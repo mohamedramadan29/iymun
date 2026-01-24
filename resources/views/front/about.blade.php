@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title', 'About Us | IYMUN 2026')
+@section('title', 'About Us | IYADMUN 2026')
 @section('content')
 <!-- ==================== PAGE HERO ==================== -->
 <section class="hero-wrapper" style="height: 70vh; min-height: 500px;">
@@ -16,7 +16,7 @@
             {{ $content->getTranslation('hero_title',app()->getLocale()) }}
         </div>
 
-        <h1 class="hero-title fade-in-up" style="font-size: 4rem;">
+        <h1 class="hero-title fade-in-up">
             {{ $content->getTranslation('hero_sub_title',app()->getLocale()) }}
             <span class="gradient-text"> {{ $content->getTranslation('hero_color_title',app()->getLocale()) }} </span>
         </h1>
@@ -35,7 +35,7 @@
 <section class="section about_who_are">
     <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-lg-6" data-aos="fade-right">
+            <div class="col-lg-6" data-aos="fade-up">
                 <div style="position: relative;">
                     <img src="{{ asset('assets/uploads/content/about/'.$content->about_image) }}?w=800&q=80"
                         alt="Youth Leaders" class="img-fluid rounded-5 shadow-lg"
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-left">
+            <div class="col-lg-6" data-aos="fade-up">
                 <h2 class="section-title mb-4">
                     {{ $content->getTranslation('about_title',app()->getLocale()) }}
                 </h2>
@@ -131,7 +131,7 @@
         </div>
 
         <div class="row g-5">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="p-3 rounded-5"
                     style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border: 2px solid rgba(255, 255, 255, 0.3);">
                     <div
@@ -147,7 +147,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="p-3 rounded-5"
                     style="background: rgba(255, 215, 0, 0.15); backdrop-filter: blur(20px); border: 2px solid rgba(255, 215, 0, 0.5);">
                     <div
@@ -259,7 +259,7 @@
     </div>
 </section>
 
-<!-- ==================== WHY IYMUN DIFFERENT ==================== -->
+<!-- ==================== WHY IYADMUN DIFFERENT ==================== -->
 <section class="parallax-section section"
     style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=80');">
     <div class="parallax-overlay"

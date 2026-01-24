@@ -1,17 +1,17 @@
 @extends('dashboard.layouts.app')
-@section('title', ' المدفوعات  ')
+@section('title', ' Payments ')
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="mb-2 content-header-left col-md-6 col-12 breadcrumb-new">
-                <h3 class="mb-0 content-header-title d-inline-block"> المدفوعات  </h3>
+                <h3 class="mb-0 content-header-title d-inline-block"> Payments </h3>
                 <div class="row breadcrumbs-top d-inline-block">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">الرئيسية </a>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.welcome') }}">Home </a>
                             </li>
-                            <li class="breadcrumb-item active">  المدفوعات
+                            <li class="breadcrumb-item active">  Payments
                             </li>
                         </ol>
                     </div>
@@ -36,12 +36,12 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th> الاسم </th>
-                                                <th> البريد الالكتروني </th>
-                                                <th> اسم الخطة   </th>
-                                                <th> السعر  </th>
-                                                <th>  الحالة </th>
-                                                <th> تاريخ العملية  </th>
+                                                <th> Name </th>
+                                                <th> Email </th>
+                                                <th> Plan Name </th>
+                                                <th> Price </th>
+                                                <th> Status </th>
+                                                <th> Date </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -59,7 +59,7 @@
                                             </tr>
 
                                             @empty
-                                            <td colspan="4"> لا يوجد بيانات </td>
+                                            <td colspan="4"> No data available </td>
                                             @endforelse
                                         </tbody>
                                     </table>
