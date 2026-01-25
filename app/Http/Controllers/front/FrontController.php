@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\front;
 
-use App\Http\Controllers\Controller;
-use App\Models\dashboard\Package;
-use App\Models\dashboard\AboutPage;
-use App\Models\dashboard\CommitteePage;
-use App\Models\dashboard\homePage;
-use App\Models\dashboard\VenuePage;
-use App\Models\dashboard\WhyJoin;
 use Illuminate\Http\Request;
+use App\Models\dashboard\Package;
+use App\Models\dashboard\WhyJoin;
+use App\Models\dashboard\homePage;
+use App\Models\dashboard\AboutPage;
+use App\Models\dashboard\VenuePage;
+use App\Http\Controllers\Controller;
+use App\Models\dashboard\PartenerPage;
+use App\Models\dashboard\CommitteePage;
 
 class FrontController extends Controller
 {
@@ -51,12 +52,14 @@ class FrontController extends Controller
 
     public function partners()
     {
-        return view('front.partners');
+        $content = PartenerPage::first();
+        return view('front.partners', compact('content'));
     }
 
     public function faq()
     {
-        return view('front.faq');
+        $faqs = \App\Models\dashboard\Faq::orderBy('order')->get()->groupBy('category');
+        return view('front.faq', compact('faqs'));
     }
 
     public function contact(){

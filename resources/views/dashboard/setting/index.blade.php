@@ -38,6 +38,9 @@
                                         <div class="alert alert-danger">{{ $error }}</div>
                                     @endforeach
                                 @endif
+                                @if (session()->has('success'))
+                                    <div class="alert alert-success">{{ session()->get('success') }}</div>
+                                @endif
                                 <div class="card-header">
                                     <h4 class="card-title" id="basic-layout-form"> الاعدادات </h4>
                                 </div>
@@ -47,41 +50,72 @@
                                             action="{{ route('dashboard.setting.update') }}" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-body">
-                                                <!-- باقي الحقول -->
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="phone1"> رقم هاتف قسم الصيانة <span
-                                                                    class="required_span">
-                                                                    *
-                                                                </span> </label>
-                                                            <input required type="text" id="phone1"
-                                                                class="form-control" placeholder="" name="phone1"
-                                                                value="{{ $setting->phone1 }}">
+                                                            <label for="name"> اسم الموقع <span class="required_span"> * </span> </label>
+                                                            <input required type="text" id="name" class="form-control" name="name" value="{{ $setting->name ?? '' }}">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="phone2"> رقم هاتف الادارة <span
-                                                                    class="required_span">
-                                                                    *</span> </label>
-                                                            <input required type="text" id="phone2"
-                                                                class="form-control" placeholder="" name="phone2"
-                                                                value="{{ $setting->phone2 }}">
+                                                            <label for="email"> البريد الالكتروني <span class="required_span"> *</span> </label>
+                                                            <input required type="email" id="email" class="form-control" name="email" value="{{ $setting->email ?? '' }}">
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-12">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="terms"> الشروط والاحكام <span
-                                                                    class="required_span">
-                                                                    *
-                                                                </span> </label>
-                                                            <textarea required type="text" id="terms" class="form-control" placeholder="" name="terms"
-                                                                >{{ $setting->terms }}</textarea>
+                                                            <label for="phone"> رقم الهاتف <span class="required_span"> * </span> </label>
+                                                            <input required type="text" id="phone" class="form-control" name="phone" value="{{ $setting->phone ?? '' }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="full_address"> العنوان بالكامل <span class="required_span"> * </span> </label>
+                                                            <input required type="text" id="full_address" class="form-control" name="full_address" value="{{ $setting->full_address ?? '' }}">
                                                         </div>
                                                     </div>
 
+                                                    <div class="col-md-12 d-none">
+                                                        <div class="form-group">
+                                                            <label for="location"> رابط الموقع (Google Maps) </label>
+                                                            <input type="hidden" id="location" class="form-control" name="location" value="{{ $setting->location ?? '' }}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="facebook_url"> رابط الفيسبوك </label>
+                                                            <input type="url" id="facebook_url" class="form-control" name="facebook_url" value="{{ $setting->facebook_url ?? '' }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="x_url"> رابط X (تويتر سابقا) </label>
+                                                            <input type="url" id="x_url" class="form-control" name="x_url" value="{{ $setting->x_url ?? '' }}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="instagram_url"> رابط انستغرام </label>
+                                                            <input type="url" id="instagram_url" class="form-control" name="instagram_url" value="{{ $setting->instagram_url ?? '' }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="linkedin_url"> رابط لينكد ان </label>
+                                                            <input type="url" id="linkedin_url" class="form-control" name="linkedin_url" value="{{ $setting->linkedin_url ?? '' }}">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="youtube_url"> رابط يوتيوب </label>
+                                                            <input type="url" id="youtube_url" class="form-control" name="youtube_url" value="{{ $setting->youtube_url ?? '' }}">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 

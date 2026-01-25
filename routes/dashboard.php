@@ -15,6 +15,7 @@ use App\Http\Controllers\dashboard\NotificationController;
 use App\Http\Controllers\dashboard\content\AboutController;
 use App\Http\Controllers\dashboard\auth\ResetPasswordController;
 use App\Http\Controllers\dashboard\auth\ForgetPasswordController;
+use App\Http\Controllers\dashboard\content\PartenerController;
 use App\Http\Controllers\dashboard\SpotDifferenceImageController;
 
 Route::group([
@@ -179,5 +180,13 @@ Route::group([
             Route::get('content/venue', 'index')->name('content.venue');
             Route::post('content/venue/update', 'update')->name('content.venue.update');
         });
+
+        Route::controller(PartenerController::class)->group(function () {
+            Route::get('content/partner', 'index')->name('content.partner');
+            Route::post('content/partner/update', 'update')->name('content.partner.update');
+        });
+        ###################### Start FAQ Page Controller ###########
+
+        Route::resource('content/faq', \App\Http\Controllers\dashboard\content\FaqController::class)->names('content.faq');
     });
 });

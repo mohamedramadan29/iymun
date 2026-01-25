@@ -44,7 +44,7 @@
         </div>
 
         <div class="row g-4">
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-custom text-center h-100">
                     <div
                         style="width: 80px; height: 80px; background: linear-gradient(135deg, #4A90E2, #0A72B5); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);">
@@ -52,12 +52,12 @@
                     </div>
                     <h4 class="card-title">Email Us</h4>
                     <p class="card-text mb-3">Response within 24 hours</p>
-                    <a href="mailto:info@iyadmun.org" class="fw-bold"
-                        style="color: var(--un-blue); text-decoration: none;">info@iyadmun.org</a>
+                    <a href="mailto:{{ $setting->email }}" class="fw-bold"
+                        style="color: var(--un-blue); text-decoration: none;">{{ $setting->email }}</a>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="card-custom text-center h-100" style="border: 3px solid #10B981;">
                     <div
                         style="width: 80px; height: 80px; background: linear-gradient(135deg, #10B981, #34D399); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);">
@@ -65,14 +65,12 @@
                     </div>
                     <h4 class="card-title">WhatsApp</h4>
                     <p class="card-text mb-3">Instant messaging</p>
-                    <a href="https://wa.me/19175130904" class="fw-bold d-block mb-1"
-                        style="color: #10B981; text-decoration: none;">+1 (917) 513-0904</a>
-                    <a href="https://wa.me/333444666862" class="fw-bold"
-                        style="color: #10B981; text-decoration: none;">+33 (344) 466-6862</a>
+                    <a href="https://wa.me/{{ $setting->phone }}" class="fw-bold d-block mb-1"
+                        style="color: #10B981; text-decoration: none;">{{ $setting->phone }}</a>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
                 <div class="card-custom text-center h-100">
                     <div
                         style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFD700, #FFA500); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);">
@@ -80,21 +78,8 @@
                     </div>
                     <h4 class="card-title">Call Us</h4>
                     <p class="card-text mb-3">Mon-Fri 9AM-6PM EST</p>
-                    <a href="tel:+19175130904" class="fw-bold" style="color: var(--un-blue); text-decoration: none;">+1
-                        (917) 513-0904</a>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
-                <div class="card-custom text-center h-100">
-                    <div
-                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #EF4444, #F87171); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);">
-                        <i class="fas fa-comment-dots" style="font-size: 2rem; color: white;"></i>
-                    </div>
-                    <h4 class="card-title">Live Chat</h4>
-                    <p class="card-text mb-3">Real-time support</p>
-                    <button class="btn btn-outline-primary rounded-pill px-4"
-                        onclick="alert('Live chat coming soon!')">Start Chat</button>
+                    <a href="tel:{{ $setting->phone }}" class="fw-bold"
+                        style="color: var(--un-blue); text-decoration: none;">{{ $setting->phone }} </a>
                 </div>
             </div>
         </div>
@@ -138,14 +123,15 @@
                             <!-- Phone -->
                             <div class="col-md-6">
                                 <label for="phone" class="form-label fw-bold">Phone Number</label>
-                                <input type="tel" class="form-control form-control-lg rounded-3" id="phone"
-                                    name="phone" placeholder="+1 (555) 123-4567">
+                                <input type="tel" class="form-control form-control-lg rounded-3" id="phone" name="phone"
+                                    placeholder="+1 (555) 123-4567">
                             </div>
                             <!-- Subject -->
                             <div class="col-12">
                                 <label for="subject" class="form-label fw-bold">Subject <span
                                         style="color: #EF4444;">*</span></label>
-                                <select class="form-select form-select-lg rounded-3" id="subject" name="subject" required>
+                                <select class="form-select form-select-lg rounded-3" id="subject" name="subject"
+                                    required>
                                     <option value="">Select a topic</option>
                                     <option value="Registration">Registration Question</option>
                                     <option value="Pricing">Pricing & Payment</option>
@@ -206,26 +192,24 @@
                         <div>
                             <h5 class="text-white fw-bold mb-2">Address</h5>
                             <p class="text-white mb-0" style="opacity: 0.9;">
-                                123 Park Avenue, Suite 500<br>
-                                New York, NY 10017<br>
-                                United States
+                                {{ $setting->full_address }}
                             </p>
                         </div>
                     </div>
 
                     <div class="d-flex align-items-start mb-4">
-                        <div
+                        {{-- <div
                             style="width: 60px; height: 60px; background: rgba(255, 215, 0, 0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-right: 1.5rem;">
                             <i class="fas fa-clock" style="font-size: 1.8rem; color: #FFD700;"></i>
-                        </div>
-                        <div>
+                        </div> --}}
+                        {{-- <div>
                             <h5 class="text-white fw-bold mb-2">Office Hours</h5>
                             <p class="text-white mb-0" style="opacity: 0.9;">
                                 Monday - Friday: 9:00 AM - 6:00 PM EST<br>
                                 Saturday: 10:00 AM - 2:00 PM EST<br>
                                 Sunday: Closed
                             </p>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="d-flex align-items-start">
@@ -236,14 +220,21 @@
                         <div>
                             <h5 class="text-white fw-bold mb-2">Social Media</h5>
                             <div class="d-flex gap-3 mt-3">
-                                <a href="#" class="social-link" style="background: rgba(255, 215, 0, 0.2);"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-link" style="background: rgba(255, 215, 0, 0.2);"><i
-                                        class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-link" style="background: rgba(255, 215, 0, 0.2);"><i
-                                        class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-link" style="background: rgba(255, 215, 0, 0.2);"><i
-                                        class="fab fa-linkedin-in"></i></a>
+                                @if($setting?->facebook_url) <a style="background: rgba(255, 215, 0, 0.2);"
+                                    href="{{ $setting->facebook_url }}" class="social-link"><i
+                                        class="fab fa-facebook-f"></i></a> @endif
+                                @if($setting?->instagram_url) <a style="background: rgba(255, 215, 0, 0.2);"
+                                    href="{{ $setting->instagram_url }}" class="social-link"><i
+                                        class="fab fa-instagram"></i></a> @endif
+                                @if($setting?->x_url) <a style="background: rgba(255, 215, 0, 0.2);"
+                                    href="{{ $setting->x_url }}" class="social-link"><i class="fab fa-twitter"></i></a>
+                                @endif
+                                @if($setting?->linkedin_url) <a style="background: rgba(255, 215, 0, 0.2);"
+                                    href="{{ $setting->linkedin_url }}" class="social-link"><i
+                                        class="fab fa-linkedin-in"></i></a> @endif
+                                @if($setting?->youtube_url) <a style="background: rgba(255, 215, 0, 0.2);"
+                                    href="{{ $setting->youtube_url }}" class="social-link"><i
+                                        class="fab fa-youtube"></i></a> @endif
                             </div>
                         </div>
                     </div>
@@ -252,10 +243,11 @@
 
             <div class="col-lg-6" data-aos="fade-up">
                 <div class="rounded-5 overflow-hidden" style="box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);">
+                 
+
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215921315725!2d-73.97769368459395!3d40.752728979328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4420962915165!2d-73.97929992403733!3d40.75230017138763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2590228afbc85%3A0x7f2fdbdad8fc999b!2s123%20Park%20Ave%20%23500%2C%20New%20York%2C%20NY%2010170%2C%20USA!5e0!3m2!1sen!2seg!4v1769292111300!5m2!1sen!2seg"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>

@@ -49,10 +49,11 @@
                     International Youth Diplomacy Conference bringing together future leaders from around the world.
                 </p>
                 <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    @if($setting?->facebook_url) <a href="{{ $setting->facebook_url }}" class="social-link"><i class="fab fa-facebook-f"></i></a> @endif
+                    @if($setting?->instagram_url) <a href="{{ $setting->instagram_url }}" class="social-link"><i class="fab fa-instagram"></i></a> @endif
+                    @if($setting?->x_url) <a href="{{ $setting->x_url }}" class="social-link"><i class="fab fa-twitter"></i></a> @endif
+                    @if($setting?->linkedin_url) <a href="{{ $setting->linkedin_url }}" class="social-link"><i class="fab fa-linkedin-in"></i></a> @endif
+                    @if($setting?->youtube_url) <a href="{{ $setting->youtube_url }}" class="social-link"><i class="fab fa-youtube"></i></a> @endif
                 </div>
             </div>
 
@@ -79,18 +80,21 @@
             <div class="col-lg-4 col-md-4">
                 <h5 class="footer-title">Contact Us</h5>
                 <ul class="footer-links">
-                    <li><i class="fas fa-envelope me-2"></i><a href="mailto:info@iyadmun.org">info@iyadmun.org</a></li>
-                    <li><i class="fab fa-whatsapp me-2"></i><a href="https://wa.me/19175130904">+1 (917) 513-0904</a>
-                    </li>
-                    <li><i class="fab fa-whatsapp me-2"></i><a href="https://wa.me/333444666862">+33 (344) 466-6862</a>
-                    </li>
-                    <li><i class="fas fa-map-marker-alt me-2"></i>New York City, USA</li>
+                    @if($setting?->email)
+                        <li><i class="fas fa-envelope me-2"></i><a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></li>
+                    @endif
+                    @if($setting?->phone)
+                        <li><i class="fas fa-phone me-2"></i><a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a></li>
+                    @endif
+                    @if($setting?->full_address)
+                        <li><i class="fas fa-map-marker-alt me-2"></i>{{ $setting->full_address }}</li>
+                    @endif
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p class="mb-0">&copy; 2026 Iraqi Youth & American Diplomats MUN 2026. All rights reserved.</p>
+            <p class="mb-0">&copy; {{ date('Y') }} {{ $setting->name ?? 'IYADMUN' }}. All rights reserved.</p>
         </div>
     </div>
 </footer>

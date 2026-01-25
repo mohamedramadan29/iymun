@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/front/css/main.css') }} ?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/main.css') }}">
     @yield('css')
     @toastifyCss
 </head>
